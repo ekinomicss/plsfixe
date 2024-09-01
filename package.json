@@ -1,0 +1,28 @@
+{
+    "name": "plsfixe",
+    "version": "1.0.0",
+    "description": "Food blog of Pls Fixe Nyc.",
+    "main": "index.js",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint ."
+    },
+    "dependencies": {
+      "next": "latest",
+      "react": "latest",
+      "react-dom": "latest",
+      "tailwindcss": "^3.0.0",
+      "framer-motion": "^4.0.0",
+      "d3": "^7.0.0"
+    },
+    "devDependencies": {
+      "eslint": "latest",
+      "postcss": "latest",
+      "autoprefixer": "latest"
+    },
+    "author": "ekin zorer",
+    "license": "MIT"
+  }
+  
