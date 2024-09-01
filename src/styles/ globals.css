@@ -1,0 +1,85 @@
+/* Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+
+/* Set up basic body styles */
+body {
+  @apply bg-gray-100 text-gray-900 antialiased; /* Tailwind utility classes */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset margins and paddings for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: #1a73e8; /* Google blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0c47a1; /* Darker shade for hover */
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container for consistent padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Utility class for spacing */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0c47a1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #f7f7f7;
+  color: #555;
+}
+
+/* Tailwind Typography (Optional) */
+/* Uncomment the following line if you want to use Tailwind's typography plugin */
+// @import '@tailwindcss/typography';
