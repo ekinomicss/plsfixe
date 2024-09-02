@@ -1,13 +1,13 @@
 /* Tailwind CSS imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* Custom Global Styles */
 
 /* Set up basic body styles */
 body {
-  @apply bg-gray-100 text-gray-900 antialiased; /* Tailwind utility classes */
+  /* @apply bg-gray-100 text-gray-900 antialiased; /* Tailwind utility classes */
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -64,7 +64,7 @@ img {
 
 /* Buttons */
 button {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  /* @apply bg-blue-500 text-white font-bold py-2 px-4 rounded; */
   transition: background-color 0.3s ease;
 }
 
@@ -82,4 +82,4 @@ footer {
 
 /* Tailwind Typography (Optional) */
 /* Uncomment the following line if you want to use Tailwind's typography plugin */
-// @import '@tailwindcss/typography';
+/* // @import '@tailwindcss/typography'; */
