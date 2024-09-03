@@ -18,13 +18,13 @@
         "react": "latest",
         "react-dom": "latest",
         "remark": "^15.0.1",
-        "remark-html": "^16.0.1",
-        "tailwindcss": "^3.4.10"
+        "remark-html": "^16.0.1"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
         "eslint": "latest",
-        "postcss": "^8.4.43"
+        "postcss": "^8.4.44",
+        "tailwindcss": "^3.4.10"
     },
     "author": "ekin zorer",
     "license": "MIT"

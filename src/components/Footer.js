@@ -1,32 +1,33 @@
 // src/components/Footer.js
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-gray-200 text-white py-6">
       <div className="container mx-auto px-4 text-center">
         <p className="mb-4">© 2024 Pls Fixe Nyc. All Rights Reserved.</p>
         <ul className="flex justify-center space-x-4">
           <li>
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Main Menu
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/about" className="hover:underline">
+            <Link href="/about" className="hover:underline">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/posts" className="hover:underline">
+            <Link href="/posts" className="hover:underline">
               Reviews
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contact" className="hover:underline">
+            <Link href="/contact" className="hover:underline">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
