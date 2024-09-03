@@ -2,6 +2,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
 
 /* Custom Global Styles */
 
@@ -22,7 +24,7 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', serif;
   color: #333;
   margin-bottom: 1rem;
@@ -78,6 +80,10 @@ footer {
   padding: 2rem 0;
   background-color: #f7f7f7;
   color: #555;
+}
+
+.font-bodoni {
+  font-family: bodoni, serif;
 }
 
 /* Tailwind Typography (Optional) */

@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-200 text-white py-6">
+    <footer className="bg-[#ede6d8] text-gray py-6">
       <div className="container mx-auto px-4 text-center">
-        <p className="mb-4">© 2024 Pls Fixe Nyc. All Rights Reserved.</p>
+        <p className="mb-4 ">© 2024 Pls Fixe Nyc.</p>
         <ul className="flex justify-center space-x-4">
           <li>
             <Link href="/" className="hover:underline">

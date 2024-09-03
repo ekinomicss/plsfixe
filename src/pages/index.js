@@ -17,7 +17,7 @@ export async function getStaticProps() {
 const Home = ({ allPostsData }) => {
   return (
     <Layout>
-      <div>
+      <div className="py-24">
         <h1>Welcome to the Home Page</h1>
         <p>This is the home page of the blog.</p>
         <ul>
