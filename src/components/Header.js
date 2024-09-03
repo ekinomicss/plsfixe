@@ -20,17 +20,14 @@ export default function Header() {
       
         <div className="container mx-auto items-right px-4">
         {/* Navigation Links on the Right */}
-        <nav className="flex items-center space-x-6 py-3">
-          <Link href="/" className="text-gray-700 hover:text-gray-900 text-base font-roboto">
-            Home
-          </Link>
-          <Link href="/about" className="text-gray-700 hover:text-gray-900 text-base font-roboto">
+        <nav className="flex items-center space-x-6 py-4">
+          <Link href="/about" className="text-gray-700 hover:text-gray-900 font-serif">
             About
           </Link>
-          <Link href="/posts" className="text-gray-700 hover:text-gray-900 text-base font-roboto">
-            Blog
+          <Link href="/posts" className="text-gray-700 hover:text-gray-900 font-serif">
+            Reviews
           </Link>
-          <Link href="/contact" className="text-gray-700 hover:text-gray-900 text-base font-roboto">
+          <Link href="/contact" className="text-gray-700 hover:text-gray-900 font-serif">
             Contact
           </Link>
         </nav>
