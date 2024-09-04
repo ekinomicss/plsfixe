@@ -55,6 +55,17 @@ img {
   padding: 0 1rem;
 }
 
+.container_left {
+  flex: 1; /* This will take up available space */
+  padding: 0 1rem;
+}
+
+.container_right {
+  flex-basis: 300px; /* Set a fixed width or use flex-basis */
+  padding: 0 1rem;
+  margin-left: auto; /* Push it to the right */
+}
+
 /* Utility class for spacing */
 .mb-4 {
   margin-bottom: 1rem;

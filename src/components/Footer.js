@@ -10,22 +10,22 @@ export default function Footer() {
         <p className="mb-4 ">© 2024 Pls Fixe Nyc.</p>
         <ul className="flex justify-center space-x-4 color-beige">
           <li>
-            <Link href="/" className="hover:underline text-yellow-800">
+            <Link href="/" className="text-yellow-800 hover:text-yellow-600">
               Main Menu
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:underline text-yellow-800">
+            <Link href="/about" className=" text-yellow-800 hover:text-yellow-600">
               About
             </Link>
           </li>
           <li>
-            <Link href="/posts" className="hover:underlin text-yellow-800">
+            <Link href="/posts" className="text-yellow-800 hover:text-yellow-600">
               Reviews
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:underline text-yellow-800">
+            <Link href="/contact" className="text-yellow-800 hover:text-yellow-600">
               Contact
             </Link>
           </li>
