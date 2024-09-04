@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-20">
+      <main className="container mx-auto px-20 py-20">
         {children}
       </main>
       <Footer />

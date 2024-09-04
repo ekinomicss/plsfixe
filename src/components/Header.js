@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="bg-[#ede6d8] border-b-8 border-double border-black py-4">
+    <header className="fixed w-full bg-[#ede6d8] border-b-8 border-double border-black py-4">
       <div className="container mx-auto flex justify-between items-center px-4">
       {/* Logo and Title on the Left */}
       <div className="flex items-center space-x-4">
@@ -28,6 +28,9 @@ export default function Header() {
           </Link>
           <Link href="/posts" className="text-black hover:text-yellow-600 hover:underline duration-300 ease-in-out font-bold font-serif">
             REVIEWS
+          </Link>
+          <Link href="/posts" className="text-black hover:text-yellow-600 hover:underline duration-300 ease-in-out font-bold font-serif">
+            MAP
           </Link>
           <Link href="/contact" className="text-black hover:text-yellow-600 hover:underline duration-300 ease-in-out font-bold font-serif">
             CONTACT
