@@ -1,5 +1,5 @@
 ---
-title: "First Post"
+title: "Kopitiam"
 date: "2024-09-01"
 description: "This is the first post on my food blog."
 ---

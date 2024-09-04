@@ -1,9 +1,7 @@
 import React from 'react';
 import { getSortedPostsData } from '../utils/markdownToHtml';
 import Layout from '../components/Layout';
-// import Grid from '../components/Grid'; 
-
-console.log(Layout);  
+import Grid from '../components/Grid';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -17,18 +15,10 @@ export async function getStaticProps() {
 const Home = ({ allPostsData }) => {
   return (
     <Layout>
-      <div className="py-24">
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the home page of the blog.</p>
-        <ul>
-          {allPostsData.map(({ id, title, date }) => (
-            <li key={id}>
-              <a href={`/posts/${id}`}>{title}</a>
-              <br />
-              <small>{date}</small>
-            </li>
-          ))}
-        </ul>
+      <div className="py-14">
+        <h1 className="text-3xl font-bold mb-3">Welcome to the Home Page</h1>
+        <p className="mb-12">This is the home page of the blog.</p>
+        <Grid posts={allPostsData} />
       </div>
     </Layout>
   );
