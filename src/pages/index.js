@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { getSortedPostsData } from '../utils/markdownToHtml';
+import { useEffect } from 'react';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 
@@ -20,7 +21,7 @@ export async function getStaticProps() {
   const otherPosts = allPostsData.filter(
     post => post !== highlightPost
   );
-
+  
   return {
     props: {
       highlightPost,
@@ -29,6 +30,38 @@ export async function getStaticProps() {
     },
   };
 }
+
+const InstagramEmbed = () => {
+  // Load Instagram embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//www.instagram.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div
+      className="instagram-embed"
+      dangerouslySetInnerHTML={{
+        __html: `
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/plsfixenyc/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+          <div style="padding:16px;">
+            <a href="https://www.instagram.com/plsfixenyc/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 30px; margin-right: 14px; width: 30px;"></div>
+                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                  <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                  <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </blockquote>`,
+      }}
+    />
+  );
+};
 
 const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
   return (
@@ -59,7 +92,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           </div>
 
           {/* Trending Reviews (one column) */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col gap-8">
             <h2 className="text-3xl font-bold mb-4 font-serif">Trending</h2>
             <ul className="space-y-4 border border-black rounded-lg">
               {trendingPosts.map((post, index) => (
@@ -74,7 +107,16 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                 </li>
               ))}
             </ul>
+
+          {/* Instagram */}
+          <div>
+              <h2 className="text-3xl font-bold mb-4 font-serif">Instagram</h2>
+              <div className="border border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+                <InstagramEmbed />
+              </div>
           </div>
+          </div>
+
         </div>
 
       <div className="flex flex-col space-y-1 py-9">
