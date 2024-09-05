@@ -5,6 +5,7 @@ description: "This is the second post on my food blog."
 thumbnail: "../images/kikis.png"
 trendingRank: 2
 category: "Review"
+slug: "kikis"
 ---
 
 # Welcome to the First Post

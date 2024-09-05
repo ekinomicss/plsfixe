@@ -1,32 +1,35 @@
-import React from 'react';
-
-const Post = ({ post }) => {
-  return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
-    </div>
-  );
-};
+import { getAllPostSlugs, getPostData } from '../../utils/markdownToHtml'; // Fetch post data
+import Layout from '../../components/Layout';
 
 export async function getStaticPaths() {
-  // Fetch or generate the list of paths
-  const paths = [
-    { params: { slug: 'example-post' } },
-    // Add more paths here
-  ];
-
-  return { paths, fallback: false };
+  // Fetch the list of slugs from your posts
+  const paths = getAllPostSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
-  // Fetch or generate the post data based on the slug
-  const post = {
-    title: 'Example Post',
-    content: 'This is an example post.',
+  // Fetch the post content based on the slug
+  const postData = await getPostData(params.slug);
+  return {
+    props: {
+      postData,
+    },
   };
-
-  return { props: { post } };
 }
+
+const Post = ({ postData }) => {
+  return (
+    <Layout>
+      <article className="container mx-auto py-12 font-sans px-6">
+        <h1 className="text-4xl font-bold font-serif mb-6">{postData.title}</h1>
+        <p className="text-md mb-4">{postData.date}</p>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </article>
+    </Layout>
+  );
+};
 
 export default Post;

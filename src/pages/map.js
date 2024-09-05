@@ -30,7 +30,7 @@ const Map = () => {
 
     // Path generator using the new projection
     const path = d3.geoPath().projection(projection);
-
+    
     // Zoom behavior with pan/zoom limits
     const zoom = d3.zoom()
       .scaleExtent([1, 10])  // Allow further zooming

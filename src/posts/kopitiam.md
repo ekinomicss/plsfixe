@@ -5,6 +5,7 @@ description: "This is the first post on my food blog."
 thumbnail: "../images/kopi.png"
 trendingRank: 3
 category: "Review"
+slug: "kopitiam"
 ---
 
 # Welcome to the First Post
