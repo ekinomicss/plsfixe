@@ -37,7 +37,7 @@ export default function Header() {
             DINE
           </button>
             {dropdownOpen && (
-              <div className="absolute mt-0 bg-[#ede6d8] border border-black rounded-lg shadow-lg">
+              <div className="absolute mt-0 bg-[#ede6d8] border border-black rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
                 <ul className="py-2">
                   <li>
                     <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white">

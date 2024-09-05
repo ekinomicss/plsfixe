@@ -12,11 +12,12 @@ const PostCard = ({ post }) => {
         />
       )}
       <h2 className="text-xl font-semibold font-sans mb-2">
-        <Link href={`/posts/${post.id}`} className="text-yellow-600">
+        <Link href={`/posts/${post.title}`} className="text-yellow-600">
           {post.title}
         </Link>
       </h2>
       <p className="text-gray-600">{post.date}</p>
+      <p className="text-sm text-gray-500 italic">{post.category}</p>
     </div>
   );
 };
