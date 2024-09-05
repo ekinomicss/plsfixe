@@ -93,10 +93,6 @@ footer {
   color: #555;
 }
 
-.font-bodoni {
-  font-family: bodoni, serif;
-}
-
 /* Tailwind Typography (Optional) */
 /* Uncomment the following line if you want to use Tailwind's typography plugin */
 /* // @import '@tailwindcss/typography'; */
