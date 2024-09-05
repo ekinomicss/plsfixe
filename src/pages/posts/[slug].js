@@ -26,9 +26,10 @@ const Post = ({ postData }) => {
       <article className="container mx-auto py-12 font-sans px-6">
         <h1 className="text-4xl font-bold font-serif mb-6">{postData.title}</h1>
         <p className="text-md mb-4">
-          {postData.date} <br></br>
           {postData.category && ` ${postData.category}`}
           {postData.neighborhood && ` | ${postData.neighborhood}`}
+          <br></br>
+          <i>Last updated: {postData.date} </i>
           </p>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         <a href="/posts"><h4 className="text-lg font-bold underline font-serif mt-5 hover:text-yellow-600 duration-300 ease-in-out">&lt; All Posts</h4></a>
