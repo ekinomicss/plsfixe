@@ -13,6 +13,8 @@ const About = () => {
           We wanted to start a blog to answer some of our friends' most existential questions: "Where should I dine tonight?", "What should I order?" and "What's the vibe??"
         </p>
         <p className="text-md mb-4">
+          Due to our small size, we are only covering Manhatan and Brooklyn. We are hoping to extend to other boroughs as we grow.        </p>
+        <p className="text-md mb-4">
           As a group of young professionals in the city, we are grateful to be able to have access to some of the best food in the world. We hope to share our experiences with you and help you make the most of your dining experiences in NYC!
         </p>
         <p className="text-md italic">
