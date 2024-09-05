@@ -31,7 +31,7 @@ const Post = ({ postData }) => {
           {postData.neighborhood && ` | ${postData.neighborhood}`}
           </p>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        <a href="/posts"><h4 className="text-lg font-bold underline font-serif mt-5 hover:text-yellow-600 duration-300 ease-in-out">All Posts</h4></a>
+        <a href="/posts"><h4 className="text-lg font-bold underline font-serif mt-5 hover:text-yellow-600 duration-300 ease-in-out">&lt; All Posts</h4></a>
       </article>
     </Layout>
   );
