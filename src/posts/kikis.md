@@ -6,6 +6,7 @@ thumbnail: "../images/kikis.png"
 trendingRank: 2
 category: "Review"
 slug: "kikis"
+neighborhood: "Lower East Side"
 ---
 
 # Welcome to the First Post

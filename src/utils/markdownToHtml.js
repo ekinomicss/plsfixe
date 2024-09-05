@@ -37,7 +37,6 @@ export function getSortedPostsData() {
 }
 
 
-
 // Function to get all post slugs
 export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);

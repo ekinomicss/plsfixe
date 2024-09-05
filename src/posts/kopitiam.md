@@ -6,6 +6,7 @@ thumbnail: "../images/kopi.png"
 trendingRank: 3
 category: "Review"
 slug: "kopitiam"
+neighborhood: "Lower East Side"
 ---
 
 # Welcome to the First Post
