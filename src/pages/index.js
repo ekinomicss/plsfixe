@@ -79,7 +79,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Instagram */}
           <div>
             {/* <h2 className="text-3xl font-bold mb-1 mt-4 font-serif">Instagram</h2> */}
-            <div className="border border-black rounded-lg p-4 mt-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border border-black rounded-lg p-4 mt-3 hover:shadow-lg transition-shadow duration-300">
               <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
                 <h2 className="text-md mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h2>
@@ -90,9 +90,10 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         </div>
 
-      <div className="flex flex-col space-y-1 py-9">
-        <div className="h-1 bg-black"></div>
-        <div className="h-1 bg-black"></div>
+      <div className="flex flex-col space-y-1 py-5">
+        {/* <div className="h-1 bg-black"></div>
+        <div className="h-1 bg-black"></div> */}
+        <img src = "/images/divider2.png" className="w-140 mx-auto"></img>
       </div>
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
