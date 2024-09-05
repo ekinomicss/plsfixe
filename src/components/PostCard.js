@@ -11,7 +11,7 @@ const PostCard = ({ post }) => {
           className="w-full h-48 object-cover rounded-t-lg mb-4"
         />
       )}
-      <h2 className="text-xl font-semibold mb-2">
+      <h2 className="text-xl font-semibold font-sans mb-2">
         <Link href={`/posts/${post.id}`} className="text-yellow-600">
           {post.title}
         </Link>

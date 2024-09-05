@@ -49,7 +49,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                   className="w-full h-64 object-cover rounded-t-lg mb-4"
                 />
               )}
-              <h3 className="text-2xl font-semibold mb-2">
+              <h3 className="text-2xl font-semibold font-sans mb-2">
                 <Link href={`/posts/${highlightPost.id}`} className="text-yellow-600">
                   {highlightPost.title}
                 </Link>
@@ -67,7 +67,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
                     <span className="text-lg font-bold mr-2">{index + 1}.</span> {/* Ranking number */}
-                    <Link href={`/posts/${post.id}`} className="text-lg text-yellow-600">
+                    <Link href={`/posts/${post.id}`} className="text-lg font-semibold font-sans text-yellow-600">
                       {post.title}
                     </Link>
                   </div>
