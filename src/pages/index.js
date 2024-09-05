@@ -82,7 +82,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
             <div className="border border-black rounded-lg p-4 mt-4 hover:shadow-lg transition-shadow duration-300">
               <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
-                <h2 className="text-lg mt-3">Follow us on instagram! <b>@plsfixenyc</b></h2>
+                <h2 className="text-md mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h2>
               </a>
             </div>
           </div>
