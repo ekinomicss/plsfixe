@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import Layout from '../components/Layout';
 
-const NYC_MAP_URL = 'https://data.cityofnewyork.us/resource/7t3b-ywvw.geojson'; // Use more detailed GeoJSON if available
+const NYC_MAP_URL = '/nyc_open_data.geojson';
 
 // Example of specific locations to tag (latitude, longitude, and name)
 const locations = [

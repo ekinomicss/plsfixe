@@ -41,7 +41,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
             <h2 className="text-3xl font-bold mb-4 font-serif">Latest Review</h2>
-            <div className="border border-black rounded- p-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
               {highlightPost.thumbnail && (
                 <img
                   src={highlightPost.thumbnail}
@@ -62,9 +62,9 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
             <h2 className="text-3xl font-bold mb-4 font-serif">Trending</h2>
-            <ul className="space-y-4 border border-black rounded-lg">
+            <ul className="space-y-4 border border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
-                <li key={post.id} className="border-b border-gray-300 pb-4 m-4">
+                <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
                     <span className="text-lg font-bold mr-2">{index + 1}.</span> {/* Ranking number */}
                     <Link href={`/posts/${post.id}`} className="text-lg text-yellow-600">
@@ -79,9 +79,9 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Instagram */}
           <div>
             {/* <h2 className="text-3xl font-bold mb-1 mt-4 font-serif">Instagram</h2> */}
-            <div className="border border-black rounded-lg p-4 mt-6 hover:shadow-lg transition-shadow duration-300">
+            <div className="border border-black rounded-lg p-4 mt-4 hover:shadow-lg transition-shadow duration-300">
               <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                <img src="images/plsfixeig.png" className="h-20 w-20 mr-4" alt="PLS FIXE NYC Logo" />
+                <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
                 <h2 className="text-lg mt-3">Follow us on instagram! <b>@plsfixenyc</b></h2>
               </a>
             </div>
