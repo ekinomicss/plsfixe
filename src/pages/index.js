@@ -95,7 +95,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
       <div className="flex flex-col space-y-1 py-5">
         {/* <div className="h-1 bg-black"></div>
         <div className="h-1 bg-black"></div> */}
-        <img src = "/images/divider2.png" className="w-140 mx-auto"></img>
+        <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
       </div>
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
