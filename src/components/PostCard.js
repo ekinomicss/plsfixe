@@ -9,7 +9,7 @@ const PostCard = ({ post }) => {
         <img
           src={post.thumbnail}
           alt={post.title}
-          className="w-full h-48 object-cover rounded-t-lg mb-4"
+          className="w-full h-48 object-cover rounded-lg mb-4"
         />
       )}
       </Link>

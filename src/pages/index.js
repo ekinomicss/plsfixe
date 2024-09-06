@@ -47,7 +47,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                 <img
                   src={highlightPost.thumbnail}
                   alt={highlightPost.title}
-                  className="w-full h-64 object-cover rounded-t-lg mb-4"
+                  className="w-full h-64 object-cover rounded-lg mb-4"
                 />
               )}
               </Link>
