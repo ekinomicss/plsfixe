@@ -107,7 +107,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
       <div className="flex flex-col space-y-0">
         {/* <div className="h-1 bg-black"></div>
         <div className="h-1 bg-black"></div> */}
-        <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
+        <img src = "/images/divider1_bottom.png" className="w-80 mx-auto"></img>
       </div>
     </Layout>
   );
