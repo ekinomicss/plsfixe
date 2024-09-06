@@ -56,7 +56,10 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                   {highlightPost.title}
                 </Link>
               </h3>
-              <p className="text-gray-600 mb-4">{highlightPost.date}</p>
+              <p className="text-gray-600 mb-4">
+                {highlightPost.category} 
+                {highlightPost.neighborhood ? ` | ${highlightPost.neighborhood}` : ''}
+              </p>
               <p>{highlightPost.excerpt}</p>
             </div>
           </div>

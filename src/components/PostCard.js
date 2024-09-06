@@ -18,7 +18,10 @@ const PostCard = ({ post }) => {
           {post.title}
         </Link>
       </h2>
-      <p className="text-gray-600">{post.category} | {post.neighborhood}</p>
+      <p className="text-gray-600">
+        {post.category} 
+        {post.neighborhood ? ` | ${post.neighborhood}` : ''}
+        </p>
     </div>
   );
 };
