@@ -4,7 +4,7 @@ date: "2024-09-04"
 description: "This is the second post on my food blog."
 thumbnail: "../images/tomijazz.jpeg"
 category: "Review"
-slug: "tomi-jazz"
+slug: "tomijazz"
 neighborhood: "Midtown East"
 ---
 

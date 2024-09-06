@@ -25,7 +25,7 @@ const Post = ({ postData }) => {
     <Layout>
       <article className="container mx-auto py-12 font-sans px-6">
         <h1 className="text-4xl font-bold font-serif mb-6">{postData.title}</h1>
-        <p className="text-md mb-4">
+        <p className="text-md mb-4 font-serif">
           {postData.category && ` ${postData.category}`}
           {postData.neighborhood && ` | ${postData.neighborhood}`}
           <br></br>
