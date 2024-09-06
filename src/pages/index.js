@@ -99,10 +99,15 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
       </div>
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
-        <div className="mt-0">
+        <div className="mt-1">
         <h2 className="text-3xl font-bold mb-2 font-serif">À La Carte</h2>
           <Grid posts={otherPosts} />
         </div>
+      </div>
+      <div className="flex flex-col space-y-0">
+        {/* <div className="h-1 bg-black"></div>
+        <div className="h-1 bg-black"></div> */}
+        <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
       </div>
     </Layout>
   );
