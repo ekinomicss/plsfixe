@@ -40,7 +40,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold mb-4 font-serif">Latest Review</h2>
+            <h2 className="text-3xl font-bold mb-4 font-serif ">Latest Review</h2>
             <div className="border border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
             <Link href={`/posts/${highlightPost.id}`}>
             {highlightPost.thumbnail && (
@@ -76,7 +76,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                       {post.title}
                     </Link>
                   </div>
-                  <p className="text-gray-500 text-sm">{post.date}</p>
+                  <p className="text-gray-500 text-sm">{post.category} {post.neighborhood ? `| ${post.neighborhood}` : ""}</p>
                 </li>
               ))}
             </ul>
