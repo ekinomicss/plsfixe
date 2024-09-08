@@ -26,7 +26,7 @@ const Post = ({ postData }) => {
       <article className="container mx-auto py-12 font-sans px-6">
         <h1 className="text-4xl font-bold font-serif mb-6">{postData.title}</h1>
         
-          <img src = {postData.thumbnail} className = " w-full h-64 object-cover mb-3 rounded-lg"></img>
+          <img src = {postData.thumbnail} className = " w-full h-96 object-cover mb-3 rounded-lg"></img>
           <p className="text-md mb-8 font-serif">
           {postData.category && ` ${postData.category}`}
           {postData.neighborhood && ` | ${postData.neighborhood}`}
