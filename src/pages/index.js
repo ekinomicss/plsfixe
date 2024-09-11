@@ -41,7 +41,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
             <h2 className="text-3xl font-bold mb-4 font-serif ">Latest Review</h2>
-            <div className="border border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
             <Link href={`/posts/${highlightPost.id}`}>
             {highlightPost.thumbnail && (
                 <img
@@ -67,7 +67,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
             <h2 className="text-3xl font-bold mb-4 font-serif">Trending</h2>
-            <ul className="space-y-4 border border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <ul className="space-y-4 border-4 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
@@ -84,7 +84,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Instagram */}
           <div>
             {/* <h2 className="text-3xl font-bold mb-1 mt-4 font-serif">Instagram</h2> */}
-            <div className="border border-black rounded-lg p-4 mt-3 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-4 border-double border-black rounded-lg p-4 mt-1 hover:shadow-lg transition-shadow duration-300">
               <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
                 <h2 className="text-md mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h2>

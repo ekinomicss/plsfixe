@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const PostCard = ({ post }) => {
   return (
-    <div className="border border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+    <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
       <Link href={`/posts/${post.slug}`}>
       {post.thumbnail && (
         <img
