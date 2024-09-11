@@ -17,6 +17,7 @@
         "next": "latest",
         "react": "latest",
         "react-dom": "latest",
+        "react-transition-group": "^4.4.5",
         "remark": "^15.0.1",
         "remark-html": "^16.0.1"
     },
