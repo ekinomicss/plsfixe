@@ -95,9 +95,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         </div>
 
-      <div className="flex flex-col space-y-1 py-5">
-        {/* <div className="h-1 bg-black"></div>
-        <div className="h-1 bg-black"></div> */}
+      <div className="flex flex-col space-y-1 mt-6 mb-5">
         <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
       </div>
 
@@ -108,8 +106,6 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
         </div>
       </div>
       <div className="flex flex-col space-y-0">
-        {/* <div className="h-1 bg-black"></div>
-        <div className="h-1 bg-black"></div> */}
         <img src = "/images/divider1_bottom.png" className="w-80 mx-auto"></img>
       </div>
     </Layout>
