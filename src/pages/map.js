@@ -14,32 +14,32 @@ const locations = [
 
 const Map = () => {
   const svgRef = useRef(null);
-  const zoomRef = useRef(null);  // Reference for the zoom behavior
+  const zoomRef = useRef(null);  
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    // Initial projection centered over Manhattan and Brooklyn with adjusted scale
+    // Initial projection centered over Manhattan
     const projection = d3
       .geoMercator()
-      .scale(280000)  // Zoomed in more
-      .center([-73.89, 40.72])  // Centered over Manhattan and Brooklyn
+      .scale(280000)  
+      .center([-73.89, 40.72])  
       .translate([width / 2, height / 2]);
 
     // Path generator using the new projection
     const path = d3.geoPath().projection(projection);
     
-    // Zoom behavior with pan/zoom limits
+    // Zoom behavior
     const zoom = d3.zoom()
-      .scaleExtent([1, 10])  // Allow further zooming
+      .scaleExtent([1, 10])  
       .on('zoom', (event) => {
         svg.selectAll('path').attr('transform', event.transform);
         svg.selectAll('circle')
-          .attr('transform', event.transform)  // Scale the marker positions
-          .attr('r', 5 / event.transform.k);  // Scale the marker size inversely to zoom level
-        svg.selectAll('text').attr('transform', event.transform);  // Ensure markers/labels zoom with the map
+          .attr('transform', event.transform)  
+          .attr('r', 5 / event.transform.k); 
+        svg.selectAll('text').attr('transform', event.transform); 
       });
 
     // Save zoom behavior reference
@@ -67,7 +67,7 @@ const Map = () => {
         .append('circle')
         .attr('cx', (d) => projection(d.coordinates)[0])
         .attr('cy', (d) => projection(d.coordinates)[1])
-        .attr('r', 5)  // Set default radius
+        .attr('r', 5) 
         .attr('fill', 'red')
         .attr('stroke', 'black')
         .attr('stroke-width', 1);
@@ -78,13 +78,13 @@ const Map = () => {
         .data(locations)
         .enter()
         .append('text')
-        .attr('x', (d) => projection(d.coordinates)[0] + 7)  // Offset text slightly from marker
+        .attr('x', (d) => projection(d.coordinates)[0] + 7)  
         .attr('y', (d) => projection(d.coordinates)[1])
         .text((d) => d.name)
         .attr('font-size', '12px')
         .attr('fill', 'black')
         .attr('stroke', 'white')
-        .attr('stroke-width', 0.5);  // Add slight stroke to make text readable
+        .attr('stroke-width', 0.5);  
     });
 
     // Resize map on window resize
@@ -93,7 +93,7 @@ const Map = () => {
       const newHeight = window.innerHeight;
       svg.attr('width', newWidth).attr('height', newHeight);
       projection.translate([newWidth / 2, newHeight / 2]);
-      svg.selectAll('path').attr('d', path); // Recalculate paths on resize
+      svg.selectAll('path').attr('d', path); 
     };
 
     window.addEventListener('resize', handleResize);
@@ -124,7 +124,7 @@ const Map = () => {
   return (
     <Layout>
       <div className="container mx-auto py-12">
-        <h1 className="text-4xl font-bold mb-6 font-serif">Interactive Map of NYC</h1>
+        <h1 className="text-4xl font-bold mb-6 font-serif">Restaurant Search Map</h1>
         <div className="w-full h-screen relative border border-black rounded-lg">
           <div className="absolute top-4 left-4 flex space-x-2 z-20">
             <button
