@@ -40,7 +40,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold mb-4 font-serif ">Latest Review</h2>
+            <h2 className="text-2xl font-bold mb-2 font-serif">Latest Review</h2>
             <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
             <Link href={`/posts/${highlightPost.id}`}>
             {highlightPost.thumbnail && (
@@ -66,12 +66,12 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
-            <h2 className="text-3xl font-bold mb-4 font-serif">Trending</h2>
+            <h2 className="text-2xl font-bold mb-2 font-serif">Trending</h2>
             <ul className="space-y-4 border-4 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
-                    <span className="text-lg font-bold mr-2">{index + 1}.</span> {/* Ranking number */}
+                    <span className="text-lg font-bold mr-2">{index + 1}.</span> 
                     <Link href={`/posts/${post.id}`} className="text-lg font-semibold font-sans text-yellow-600">
                       {post.title}
                     </Link>
@@ -101,7 +101,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
         <div className="mt-1">
-        <h2 className="text-3xl font-bold mb-2 font-serif">À La Carte</h2>
+        <h2 className="text-2xl font-bold mb-0 font-serif">À La Carte</h2>
           <Grid posts={otherPosts} />
         </div>
       </div>
