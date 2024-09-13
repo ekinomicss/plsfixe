@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { Search } from "../utils/Search";
+
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -25,10 +27,8 @@ export default function Header() {
         </div>
       
         {/* Navigation Links on the Right */}
-        <nav className="flex items-center space-x-6">
-          <Link href="/about" className="text-black hover:text-yellow-600 hover:underline duration-300 ease-in-out font-bold font-serif">
-            ABOUT
-          </Link>
+        <nav className="flex items-center space-x-6 relative">
+        <Search />
           
           {/* Dropdown for DINE */}
           <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>

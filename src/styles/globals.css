@@ -93,6 +93,39 @@ footer {
   background-color: #f7f7f7;
   color: #555;
 }
-/*Typography (Optional) */
-/* Uncomment the following line if you want to use Tailwind's typography plugin */
-/* // @import '@tailwindcss/typography'; */
+
+.ais-SearchBox {
+  /* margin-bottom: 1em; */
+}
+
+.ais-InstantSearch {
+  width: 250px;
+  /* width: 100%; */
+  display: block;
+  overflow: hidden;
+  margin: 0 auto
+}
+
+.ais-Hits-list .ais-Hits-item {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.ais-Hits-item img {
+  margin-right: 1em
+}
+
+.ais-InstantSearch .ais-Hits-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.search-box .ais-SearchBox-input::placeholder {
+  font-style: italic;  /* Makes the placeholder text italic */
+  color: #888;  /* Adjust the color if needed */
+  font-size: smaller;
+}

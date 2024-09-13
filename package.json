@@ -11,12 +11,18 @@
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.15",
+        "algoliasearch": "^5.4.1",
         "d3": "^7.9.0",
         "framer-motion": "^4.0.0",
         "gray-matter": "^4.0.3",
+        "instantsearch.css": "^8.5.1",
+        "instantsearch.js": "^4.74.1",
+        "markdown-it": "^14.1.0",
         "next": "latest",
         "react": "latest",
         "react-dom": "latest",
+        "react-instantsearch": "^7.13.1",
+        "react-instantsearch-hooks-web": "^6.47.3",
         "react-transition-group": "^4.4.5",
         "remark": "^15.0.1",
         "remark-html": "^16.0.1"
