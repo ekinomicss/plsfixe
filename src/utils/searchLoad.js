@@ -7,7 +7,8 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
 // Initialize Algolia client
-const client = algoliasearch('0W65UCTI92', '8f5994bcc200ca69af9c9a3b2af3b294');
+const client = algoliasearch(process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_API_KEY);
 const index = client.initIndex('plsfixe');
 
 const postsDirectory = './posts'; // Adjust as necessary
