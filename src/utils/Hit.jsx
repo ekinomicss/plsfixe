@@ -6,12 +6,12 @@ const Hit = ({ hit }) => {
     <div className="hit-item">
       <Link
         href={`/posts/${hit.objectID}`}
-        className="hit-link block px-2 py-0 hover:bg-gray-100"
+        className="hit-link block py-0 hover:bg-gray-300"
       >
-        <h2 className="text-sm font-large">{hit.title}</h2>
-        {/* <p className="text-sm text-gray-600">
-          {hit.content.substring(0, 100)}...
-        </p> */}
+        <h2 className="text-md font-bold mb-0 font-medium hover:text-yellow-600">{hit.title}</h2>
+        <p className="text-sm text-gray-600">
+          {hit.category} || {hit.neighborhood}
+        </p>
       </Link>
     </div>
   );

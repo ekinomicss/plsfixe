@@ -109,23 +109,41 @@ footer {
 .ais-Hits-list .ais-Hits-item {
   margin-left: 0;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
-.ais-Hits-item img {
-  margin-right: 1em
+.hit-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the top */
+  width: 100%; 
+  padding: 0; /* Remove padding from hit items */
+}
+
+.hit-link p {
+  margin: 0; /* Remove margin from the paragraph */
+  padding: 0; /* Remove padding from the paragraph */
+  font-size: 14px; /* Adjust font size */
+  line-height: 1.2; /* Reduce the line-height */
+}
+
+.hit-link {
+  text-align: left;
+  width: 100%;
+  padding: 0; /* Remove padding inside the link */
+  margin: 0; /* Remove margin from the link */
 }
 
 .ais-InstantSearch .ais-Hits-list {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   margin-left: 0;
   margin-top: 0;
 }
 
 .search-box .ais-SearchBox-input::placeholder {
-  font-style: italic;  /* Makes the placeholder text italic */
-  color: #888;  /* Adjust the color if needed */
+  font-style: italic;  
+  color: #888;  
   font-size: smaller;
 }

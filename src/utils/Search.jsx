@@ -1,4 +1,4 @@
-import { liteClient as algoliasearch } from "algoliasearch/lite";
+import algoliasearch from 'algoliasearch/lite';
 import "instantsearch.css/themes/satellite.css";
 import {
   Hits,
