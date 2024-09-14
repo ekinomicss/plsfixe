@@ -14,6 +14,7 @@
         "algoliasearch": "^4.24.0",
         "d3": "^7.9.0",
         "dotenv": "^16.4.5",
+        "fetch": "^1.1.0",
         "framer-motion": "^4.0.0",
         "gray-matter": "^4.0.3",
         "instantsearch.css": "^8.5.1",
