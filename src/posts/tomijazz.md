@@ -6,6 +6,7 @@ thumbnail: "../images/tomijazz.jpeg"
 category: "Review"
 slug: "tomijazz"
 neighborhood: "Midtown East"
+gmaps: "Tomi Jazz, New York, NY"
 ---
 
 # Welcome to the First Post

@@ -7,6 +7,7 @@ trendingRank: 2
 category: "Review"
 slug: "kikis"
 neighborhood: "Lower East Side"
+gmaps: "Kiki's, New York, NY"
 ---
 
 # Welcome to the First Post

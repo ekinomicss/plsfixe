@@ -1,6 +1,6 @@
 import { getAllPostSlugs, getPostData } from '../../utils/markdownToHtml'; 
 import Layout from '../../components/Layout';
-import { getGoogleMapsData } from '../../utils/googleMapsApi';  // Assuming this is where you keep your API logic
+import { getGoogleMapsData } from '../../utils/googleMapsApi';  
 
 export async function getStaticPaths() {
   const paths = getAllPostSlugs();
@@ -18,13 +18,13 @@ export async function getStaticProps({ params }) {
   let googleMapsData = { rating: null, user_ratings_total: null, googleMapsLink: null };
 
   if (postData.gmaps) {
-    googleMapsData = await getGoogleMapsData(postData.gmaps); // Fetch the Google Maps data
+    googleMapsData = await getGoogleMapsData(postData.gmaps); 
   }
 
   return {
     props: {
       postData,
-      googleMapsData, // Pass the googleMapsData to the component
+      googleMapsData, 
     },
   };
 }

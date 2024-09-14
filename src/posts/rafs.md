@@ -6,6 +6,7 @@ thumbnail: "../images/rafs.png"
 category: "Review"
 slug: "rafs"
 neighborhood: "Noho"
+gmaps: "Raf's, New York, NY"
 ---
 
 # Welcome to the First Post
