@@ -54,12 +54,12 @@ const Post = ({ postData, googleMapsData }) => {
           href={googleMapsData.googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block text-lg text-blue-600 mt-4">
+          className="block text-md mx-auto text-blue-600 mt-4">
             <div className="border-4 border-double border-black rounded-lg p-4 flex items-center justify-between bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center">
               <img src="/images/google_maps_logo.png" alt="Google Maps" width={30} height={30} />
               <div className="ml-3">
-                <span className="font-bold text-lg">{googleMapsData.rating}</span>
+                <span className="font-bold">{googleMapsData.rating}</span>
                 <span className="text-gray-500"> ({googleMapsData.user_ratings_total} reviews)</span>
               </div>
             </div>
