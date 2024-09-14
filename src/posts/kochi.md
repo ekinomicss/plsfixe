@@ -6,6 +6,7 @@ thumbnail: "../images/kochi.jpeg"
 category: "Review"
 slug: "kochi"
 neighborhood: "Hell's Kitchen"
+gmaps: "Kochi, New York, NY"
 ---
 
 # Welcome to the First Post
