@@ -104,7 +104,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
     <div className="flex w-full">
       <input 
         type="email" 
-        placeholder="Subscribe to our newsletter to be notified of new posts & exclusive opportunities." 
+        placeholder="Subscribe to our newsletter to be notified of new content, giveaways & exclusive opportunities." 
         className="w-full border-2 placeholder:italic border-yellow-600 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600" 
         required
       />
