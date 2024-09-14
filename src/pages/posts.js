@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
-import fetch from 'node-fetch';
 
 const CATEGORIES = {
   ALL: 'Posts',
