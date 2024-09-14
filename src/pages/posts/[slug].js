@@ -38,14 +38,22 @@ const Post = ({ postData, googleMapsData }) => {
           src={postData.thumbnail}
           className="w-full h-96 object-cover mb-3 rounded-lg border-4 border-double border-black"
         />
-        <p className="text-md mb-- font-serif">
-          {postData.category && ` ${postData.category}`}
-          {postData.neighborhood && ` | ${postData.neighborhood}`}
-          <br />
-          <i>Last updated: {postData.date} </i>
-        </p>
-        <div className="flex flex-col mb-2">
-          <img src="/images/divider1.png" className="w-80 mx-auto" />
+
+        <div className="slug-buttons flex items-center justify-between ">
+
+        {/* Pls Fixe Categories */}
+        <div className="border-4 border-double border-black rounded-lg h-12 w-60 p-4 flex items-center justify-center bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300">
+            <div className="flex justify-center text-center">
+            <div className="flex items-center">
+              <img src="/images/plsfixe_logo_no_bg.png" alt="Google Maps" width={30} height={30} />
+              <div className="ml-3">
+                <p className="text-sm font-bold justify-center">
+                  {postData.category && ` ${postData.category}`}
+                  {postData.neighborhood && ` | ${postData.neighborhood}`}
+                </p>
+              </div>
+            </div>
+            </div>
         </div>
 
         {/* Google Maps Rating Box */}
@@ -54,8 +62,8 @@ const Post = ({ postData, googleMapsData }) => {
           href={googleMapsData.googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block text-md mx-auto text-blue-600 mt-4">
-            <div className="border-4 border-double border-black rounded-lg p-4 flex items-center justify-between bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300">
+          className="text-md text-blue-600">
+            <div className="border-4 border-double border-black rounded-lg h-12 w-60 p-4 flex items-center justify-between bg-gray-100 mb-4 w-68 hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center">
               <img src="/images/google_maps_logo.png" alt="Google Maps" width={30} height={30} />
               <div className="ml-3">
@@ -66,6 +74,30 @@ const Post = ({ postData, googleMapsData }) => {
           </div>
           </a>
         )}
+        
+        {/* Directions */}
+        <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="flex justify-center text-center">
+            <p className="text-sm font-bold text-center justify-center">
+              Directions
+            </p>
+            </div>
+        </div>
+
+        {/* Pls Fixe Last Updated */}
+        <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="flex justify-center text-center">
+            <p className="text-sm font-serif text-center justify-center">
+              <i>Last updated: {postData.date} </i>
+            </p>
+            </div>
+        </div>
+        </div>
+
+        <div className="flex flex-col mb-2">
+          <img src="/images/divider1.png" className="w-80 mx-auto" />
+        </div>
+
 
         <div
           className="border-4 border-double border-black rounded-lg p-6"
