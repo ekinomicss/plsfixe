@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      postData,
+      allPostsData,
     },
   };
 }
