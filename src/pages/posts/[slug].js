@@ -50,7 +50,7 @@ const Post = ({ postData, googleMapsData }) => {
 
         {/* Google Maps Rating Box */}
         {googleMapsData?.rating && (
-          <div className="border-4 border-double border-black rounded-lg p-4 flex items-center justify-between bg-gray-100 mb-4 w-56">
+          <div className="border-4 border-double border-black rounded-lg p-4 flex items-center justify-between bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center">
               <img src="/images/google_maps_logo.png" alt="Google Maps" width={30} height={30} />
               <div className="ml-3">
