@@ -8,7 +8,7 @@ export async function getGoogleMapsData(placeQuery) {
   console.log("Place ID:", placeId);  // Log the Place ID
 
   if (!placeId) {
-    return { rating: null, user_ratings_total: null };
+    return { rating: null, user_ratings_total: null, googleMapsLink: null };
   }
 
   const response = await fetch(
@@ -19,9 +19,10 @@ export async function getGoogleMapsData(placeQuery) {
   
   if (data.result) {
     const { rating, user_ratings_total } = data.result;
-    return { rating, user_ratings_total };
+    const googleMapsLink = `https://www.google.com/maps/place/?q=place_id:${placeId}`;
+    return { rating, user_ratings_total, googleMapsLink };
   } else {
-    return { rating: null, user_ratings_total: null };
+    return { rating: null, user_ratings_total: null, googleMapsLink: null };
   }
 }
 
