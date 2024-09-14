@@ -95,9 +95,29 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         </div>
 
-      <div className="flex flex-col space-y-1 mt-6 mb-5">
-        <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
-      </div>
+  <div className="flex justify-between items-center gap-0 mt-4 mb-2">
+    <img src="/images/divider1_left.png" className="w-40" />
+
+  {/* Newsletter Subscription Form */}
+  <form className="w-full mb-4 mt-4">
+    {/* <label className="text-sm font-serif font-bold">Subscribe to our newsletter to be notified of new posts & exclusive opportunities.</label> */}
+    <div className="flex w-full">
+      <input 
+        type="email" 
+        placeholder="Subscribe to our newsletter to be notified of new posts & exclusive opportunities." 
+        className="w-full border-2 placeholder:italic border-yellow-600 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600" 
+        required
+      />
+      <button 
+        type="submit" 
+        className="w-30 bg-black text-white ml-2 px-3 rounded-lg text-sm hover:bg-yellow-500 transition duration-300">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <img src="/images/divider1_left.png" className="w-40 transform scale-x-[-1]" />
+</div>
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
         <div className="mt-1">
