@@ -6,7 +6,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-[#ede6d8] border-b-8 border-double border-black py-4 z-50">
+    <header className="fixed w-full bg-[#f5d27d] border-b-8 border-double border-black py-4 z-50">
       <div className="container mx-auto flex justify-between items-center px-4 flex-wrap md:flex-nowrap">
         {/* Logo and Title on the Left */}
         <div className="flex items-center space-x-4">
