@@ -33,7 +33,10 @@ const Post = ({ postData, googleMapsData }) => {
   return (
     <Layout>
       <article className="container mx-auto py-12 font-sans px-6">
-        <h1 className="text-4xl font-bold font-serif mb-6">{postData.title}</h1>
+        <h1 className="text-4xl font-bold font-serif mb-1">{postData.title}</h1>
+        <h6 className="text-sm font-sans mt-0 mb-4">{postData.category && ` ${postData.category}`}
+                  {postData.neighborhood && ` \/ ${postData.neighborhood}`}
+                </h6>
         <img
           src={postData.thumbnail}
           className="w-full h-96 object-cover mb-3 rounded-lg border-4 border-double border-black"
@@ -42,7 +45,7 @@ const Post = ({ postData, googleMapsData }) => {
         <div className="slug-buttons flex items-center justify-between ">
 
         {/* Pls Fixe Categories */}
-        <div className="border-4 border-double border-yellow-600 font-serif rounded-lg h-12 w-72 p-4 flex items-center justify-center bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300">
+        <div className="border-4 border-double border-black font-serif rounded-lg h-12 w-72 p-4 flex items-center justify-center bg-gray-100 mb-4 w-56 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex justify-center text-center">
             <div className="flex items-center">
               <img src="/images/plsfixe_logo_no_bg.png" alt="Google Maps" width={30} height={30} />
@@ -63,7 +66,7 @@ const Post = ({ postData, googleMapsData }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="text-md text-blue-600">
-            <div className="border-4 border-double border-yellow-600 rounded-lg h-12 w-60 p-4 flex items-center justify-between bg-gray-100 mb-4 w-68 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-4 border-double border-black rounded-lg h-12 w-60 p-4 flex items-center justify-between bg-gray-100 mb-4 w-68 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex items-center">
               <img src="/images/google_maps_logo.png" alt="Google Maps" width={30} height={30} />
               <div className="ml-3">
@@ -76,7 +79,7 @@ const Post = ({ postData, googleMapsData }) => {
         )}
         
         {/* Directions */}
-        <div className="border-4 border-double border-yellow-600 font-serif rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
+        <div className="border-4 border-double border-black font-serif rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex justify-center text-center">
             <p className="text-sm font-bold text-center justify-center">
               Directions
@@ -85,7 +88,7 @@ const Post = ({ postData, googleMapsData }) => {
         </div>
 
         {/* Pls Fixe Last Updated */}
-        <div className="border-4 border-double border-yellow-600 rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
+        <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
             <div className="flex justify-center text-center">
             <p className="text-sm font-serif text-center justify-center">
               <i>Last updated: {postData.date} </i>
@@ -100,7 +103,7 @@ const Post = ({ postData, googleMapsData }) => {
 
 
         <div
-          className="border-4 border-double border-black rounded-lg p-6"
+          className="border-4 border-double border-black rounded-lg p-6 font-sans"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
         <div className="flex flex-col mt-2">
