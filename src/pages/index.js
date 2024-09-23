@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { getSortedPostsData } from '../utils/markdownToHtml';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 
@@ -32,6 +32,28 @@ export async function getStaticProps() {
 }
 
 const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
+  const [email, setEmail] = useState('');
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+      setStatusMessage(data.message);
+    } catch (error) {
+      setStatusMessage('Failed to subscribe. Please try again later.');
+    }
+  };
+
   return (
     <Layout>
       <div className="container mx-auto py-12">
@@ -99,22 +121,25 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
     <img src="/images/divider1_left.png" className="w-40" />
 
   {/* Newsletter Subscription Form */}
-  <form className="w-full mb-4 mt-4">
-    {/* <label className="text-sm font-serif font-bold">Subscribe to our newsletter to be notified of new posts & exclusive opportunities.</label> */}
-    <div className="flex w-full">
-      <input 
-        type="email" 
-        placeholder="Subscribe to our newsletter to be notified of new content, giveaways & exclusive opportunities." 
-        className="w-full border-2 placeholder:italic border-yellow-600 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600" 
-        required
-      />
-      <button 
-        type="submit" 
-        className="w-30 bg-black text-white ml-2 px-3 rounded-lg text-sm hover:bg-yellow-500 transition duration-300">
-        Submit
-      </button>
-    </div>
-  </form>
+  <form className="w-full mb-4 mt-4" onSubmit={handleSubmit}>
+      <div className="flex w-full">
+        <input 
+          type="email"
+          placeholder="Subscribe to our newsletter..." 
+          className="w-full border-2 placeholder:italic border-yellow-600 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} 
+          required 
+        />
+        <button type="submit" className="w-30 bg-black text-white ml-2 px-3 rounded-lg text-sm hover:bg-yellow-500 transition duration-300">
+        {statusMessage ? (
+            <p className="text-xs text-white-600">{statusMessage}</p>
+          ) : (
+            "Submit"
+          )}
+        </button>
+      </div>
+    </form>
 
   <img src="/images/divider1_left.png" className="w-40 transform scale-x-[-1]" />
 </div>
