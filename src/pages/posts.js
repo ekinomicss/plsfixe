@@ -62,7 +62,7 @@ const Posts = ({ allPostsData = [] }) => {
   return (
     <Layout>
       <div className="container mx-auto py-12 font-sans px-6">
-        <h1 className="text-4xl font-bold font-serif mb-6">Posts</h1>
+        <h1 className="text-3xl font-bold font-serif mb-6">Posts</h1>
         
         {/* Category Filter Buttons */}
         <div className="flex space-x-4 mb-2">
@@ -95,7 +95,7 @@ const Posts = ({ allPostsData = [] }) => {
             .map((neighborhood) => (
             <button
               key={neighborhood}
-              className={`px-4 py-2 text-sm rounded-lg font-bold font-serif ${
+              className={`px-4 py-2 text-xs rounded-lg font-bold font-serif ${
                 selectedNeighborhood === neighborhood
                   ? 'bg-yellow-600 text-white'
                   : 'bg-gray-100 text-black hover:bg-yellow-200'

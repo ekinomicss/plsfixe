@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Layout>
       <div className="container mx-auto py-12 font-sans px-6">
-        <h1 className="text-4xl font-bold font-serif mb-6 hover:text-yellow-500 duration-300 ease-in-out ">About</h1>
+        <h1 className="text-3xl font-bold font-serif mb-6 hover:text-yellow-500 duration-300 ease-in-out ">About</h1>
         <img src = "/images/plsfixe_logo_no_bg.png" className = "h-40 w-40 mb-5 block mx-auto"></img>
       <div className="flex flex-col space-y-0 mb-7">
         <img src = "/images/divider1.png" className="w-80 mx-auto"></img>
