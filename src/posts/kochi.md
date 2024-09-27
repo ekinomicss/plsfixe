@@ -7,6 +7,7 @@ category: "Review"
 slug: "kochi"
 neighborhood: "Hell's Kitchen"
 gmaps: "Kochi, New York, NY"
+menu: "https://www.kochinyc.com/menu/"
 ---
 
 # Welcome to the First Post

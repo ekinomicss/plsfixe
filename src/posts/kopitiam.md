@@ -8,6 +8,7 @@ category: "Review"
 slug: "kopitiam"
 neighborhood: "Lower East Side"
 gmaps: "Kopitiam, New York, NY"
+menu: "https://www.kopitiamnyc.com/menu"
 ---
 
 # Welcome to the First Post

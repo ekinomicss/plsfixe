@@ -7,6 +7,7 @@ category: "Review"
 slug: "rafs"
 neighborhood: "Noho"
 gmaps: "Raf's, New York, NY"
+menu: "https://www.rafsnewyork.com/menu/dinner/"
 ---
 
 # Welcome to the First Post

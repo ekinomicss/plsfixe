@@ -1,6 +1,7 @@
 import { getAllPostSlugs, getPostData } from '../../utils/markdownToHtml'; 
 import Layout from '../../components/Layout';
 import { getGoogleMapsData } from '../../utils/googleMapsApi';  
+import { format, parseISO } from 'date-fns';
 
 export async function getStaticPaths() {
   const paths = getAllPostSlugs();
@@ -30,6 +31,8 @@ export async function getStaticProps({ params }) {
 }
 
 const Post = ({ postData, googleMapsData }) => {
+  const formattedDate = postData.date ? format(parseISO(postData.date), "MMM dd, yyyy") : '';
+
   return (
     <Layout>
       <article className="container mx-auto py-12 font-sans px-6">
@@ -79,19 +82,24 @@ const Post = ({ postData, googleMapsData }) => {
         )}
         
         {/* Directions */}
+        <a href={postData.menu} target="_blank" rel="noopener noreferrer">
         <div className="border-4 border-double border-black font-serif rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex justify-center text-center">
-            <p className="text-sm font-bold text-center justify-center">
-              Directions
-            </p>
+              <div className="flex items-center">
+                <img src="/images/utensils_nobg.png" alt="Google Maps" width={30} height={30} /> 
+                <p className="text-sm ml-2 font-bold text-center justify-center">
+                Menu
+              </p>
             </div>
-        </div>
+            </div>
+            </div>
+          </a>
 
         {/* Pls Fixe Last Updated */}
         <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
             <div className="flex justify-center text-center">
             <p className="text-sm font-serif text-center justify-center">
-              <i>Last updated: {postData.date} </i>
+              <i>Last update: {formattedDate} </i>
             </p>
             </div>
         </div>

@@ -8,6 +8,7 @@ category: "Review"
 slug: "kikis"
 neighborhood: "Lower East Side"
 gmaps: "Kiki's, New York, NY"
+menu: "https://kikisnyc.com/kikis-nyc-menu/"
 ---
 
 # Welcome to the First Post
