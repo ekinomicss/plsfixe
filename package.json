@@ -10,6 +10,9 @@
         "lint": "eslint ."
     },
     "dependencies": {
+        "@mdx-js/loader": "^3.0.1",
+        "@mdx-js/react": "^3.0.1",
+        "@next/mdx": "^14.2.13",
         "@prisma/client": "^5.19.1",
         "@tailwindcss/typography": "^0.5.15",
         "algoliasearch": "^4.24.0",

@@ -2,7 +2,7 @@ import { getAllPostSlugs, getPostData } from '../../utils/markdownToHtml';
 import Layout from '../../components/Layout';
 import { getGoogleMapsData } from '../../utils/googleMapsApi';  
 import { format, parseISO } from 'date-fns';
-
+import MenuGallery from '../../components/MenuGallery';
 export async function getStaticPaths() {
   const paths = getAllPostSlugs();
   return {
@@ -32,6 +32,15 @@ export async function getStaticProps({ params }) {
 
 const Post = ({ postData, googleMapsData }) => {
   const formattedDate = postData.date ? format(parseISO(postData.date), "MMM dd, yyyy") : '';
+
+  const menuImages = [
+    postData.menu1,
+    postData.menu2,
+    postData.menu3,
+    postData.menu4,
+    postData.menu5,
+    postData.menu6,
+  ].filter(Boolean);
 
   return (
     <Layout>
@@ -94,11 +103,11 @@ const Post = ({ postData, googleMapsData }) => {
           <img src="/images/divider1.png" className="w-80 mx-auto" />
         </div>
 
-
-        <div
-          className="border-4 border-double border-black rounded-lg p-6 font-sans"
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        />
+        <div className="border-4 border-double border-black rounded-lg p-6 font-sans">
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <MenuGallery images={menuImages} />
+        </div>
+       
         <div className="flex flex-col mt-2">
           <img src="/images/divider1_bottom.png" className="w-80 mx-auto" />
         </div>
