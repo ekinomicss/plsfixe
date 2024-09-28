@@ -37,7 +37,7 @@ const Post = ({ postData, googleMapsData }) => {
     <Layout>
       <article className="container mx-auto py-12 font-sans px-6">
         <h1 className="text-4xl font-bold font-serif mb-1">{postData.title}</h1>
-        <h6 className="text-sm font-sans mt-0 mb-4">{postData.category && ` ${postData.category}`}
+        <h6 className="text-sm font-sans mt-0 ">{postData.category && ` ${postData.category}`}
                   {postData.neighborhood && ` \/ ${postData.neighborhood}`}
                 </h6>
         <img
@@ -45,10 +45,10 @@ const Post = ({ postData, googleMapsData }) => {
           className="w-full h-96 object-cover mb-3 rounded-lg border-4 border-double border-black"
         />
 
-        <div className="slug-buttons flex items-center justify-between ">
+        <div className="slug-buttons flex items-center justify-between mb-4 ">
 
         {/* Pls Fixe Categories */}
-        <div className="border-4 border-double border-black rounded-lg h-12 w-72 p-4 flex items-center justify-center bg-gray-100 mb-4 w-56 hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <div className="border-4 border-double border-black rounded-lg h-12 w-72 p-4 flex items-center justify-center bg-gray-100 w-56 hover:shadow-lg transition-shadow duration-300 ease-in-out">
             <div className="flex justify-center text-center">
             <div className="flex items-center">
               <div className="ml-0">
@@ -67,7 +67,7 @@ const Post = ({ postData, googleMapsData }) => {
           href={googleMapsData.googleMapsLink}
           target="_blank"
           rel="noopener noreferrer">
-            <div className="border-4 border-double border-black rounded-lg h-12 w-60 p-4 flex items-center justify-between bg-gray-100 mb-4 w-68 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
+            <div className="border-4 border-double border-black rounded-lg h-12 w-60 p-4 flex items-center justify-between bg-gray-100  w-68 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex items-center">
               <img src="/images/google_maps_logo.png" alt="Google Maps" width={30} height={30} />
               <div className="ml-3">
@@ -81,7 +81,7 @@ const Post = ({ postData, googleMapsData }) => {
         
         {/* Menu  */}
         <a href={postData.menu} target="_blank" rel="noopener noreferrer">
-        <div className="border-4 border-double border-black font-serif rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
+        <div className="border-4 border-double border-black font-serif rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100  hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
             <div className="flex justify-center text-center">
               <div className="flex items-center">
                   <p className="text-md text-yellow-600 font-bold text-center justify-center">
@@ -93,7 +93,7 @@ const Post = ({ postData, googleMapsData }) => {
           </a>
 
         {/* Pls Fixe Last Updated */}
-        <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100 mb-4 hover:shadow-lg transition-shadow duration-300">
+        <div className="border-4 border-double border-black rounded-lg h-12 w-56 p-4 flex items-center justify-center bg-gray-100  hover:shadow-lg transition-shadow duration-300">
             <div className="flex justify-center text-center">
             <p className="text-sm font-serif text-yellow-600 text-center justify-center">
               <i>Last update: {formattedDate} </i>
