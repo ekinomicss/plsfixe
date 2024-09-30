@@ -39,15 +39,15 @@ export default function Header() {
               DINE
             </button>
             {dropdownOpen && (
-              <div className="absolute mt-0 bg-yellow-800 border border-black rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
-                <ul className="py-2">
+              <div className="absolute mt-0 bg-white border border-black rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
+                <ul className="py-2 list-none m-0">
                   <li>
-                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-white hover:bg-yellow-600 hover:text-white">
+                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white">
                       POSTS
                     </Link>
                   </li>
                   <li>
-                    <Link href="/map" className="block px-4 py-2 font-bold font-serif text-white hover:bg-yellow-600 hover:text-white">
+                    <Link href="/map" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white">
                       MAP
                     </Link>
                   </li>
