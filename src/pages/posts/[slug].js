@@ -58,10 +58,10 @@ const Post = ({ postData, googleMapsData }) => {
 
           {/* Pls Fixe Categories */}
           <div className="border-4 border-double border-black rounded-lg h-11 w-64 flex items-center justify-center bg-gray-100 hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                  <p className="text-md font-bold font-serif text-yellow-600 text-center">
+                  <span className="text-md font-bold font-serif text-yellow-600 text-center">
                     {postData.category && ` ${postData.category}`}
                     {postData.neighborhood && ` | ${postData.neighborhood}`}
-                  </p>
+                  </span>
           </div>
 
           {/* Google Maps Rating Box */}
@@ -84,18 +84,18 @@ const Post = ({ postData, googleMapsData }) => {
           {postData?.menu && (
           <a href={postData.menu} target="_blank" rel="noopener noreferrer" className="block">
             <div className="border-4 border-double border-black font-serif rounded-lg h-11 w-64 flex items-center justify-center bg-gray-100 hover:shadow-lg hover:text-yellow-600 transition-shadow duration-300">
-              <p className="text-md text-yellow-600 font-bold">
+              <span className="text-md text-yellow-600 font-bold">
                 Menu
-              </p>
+              </span>
             </div>
           </a>
           )}
 
           {/* Pls Fixe Last Updated */}
           <div className="border-4 border-double border-black rounded-lg h-11 w-64 flex items-center justify-center bg-gray-100 hover:shadow-lg transition-shadow duration-300">
-            <p className="text-sm font-serif text-yellow-600 text-center">
+            <span className="text-sm font-serif text-yellow-600 text-center">
               <i>Last update: {formattedDate}</i>
-            </p>s
+            </span>
           </div>
         </div>
 

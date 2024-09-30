@@ -14,10 +14,15 @@ menu2: "../images/kikis2.png"
 menu3: "../images/kikis3.png"
 ---
 
-# Welcome to the First Post<br />
+## Welcome to the First Post
   
 - This is an example of a Markdown post.
-  
+- Item 2
+    - Item 3
+- Item 3
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat non augue in porta. Nullam consequat in purus non tempor. Aenean vitae ipsum neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et accumsan tellus, id dignissim nibh. Morbi ac tempus risus. Pellentesque ullamcorper lacus sollicitudin nisi auctor, vel egestas mi rutrum. Nam quis rhoncus lectus. Mauris tincidunt purus erat, vitae aliquet erat luctus sed. Suspendisse feugiat, metus id rhoncus fringilla, ipsum sapien dignissim arcu, id semper dui purus vitae justo. Sed euismod massa quis augue consequat fringilla. Aliquam nec pretium elit, at congue diam.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat non augue in porta. Nullam consequat in purus non tempor. Aenean vitae ipsum neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et accumsan tellus, id dignissim nibh. Morbi ac tempus risus. 
+
+Pellentesque ullamcorper lacus sollicitudin nisi auctor, vel egestas mi rutrum. Nam quis rhoncus lectus. Mauris tincidunt purus erat, vitae aliquet erat luctus sed. Suspendisse feugiat, metus id rhoncus fringilla, ipsum sapien dignissim arcu, id semper dui purus vitae justo. Sed euismod massa quis augue consequat fringilla. Aliquam nec pretium elit, at congue diam.
 
