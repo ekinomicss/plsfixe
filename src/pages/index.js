@@ -69,7 +69,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                 <img
                   src={highlightPost.thumbnail}
                   alt={highlightPost.title}
-                  className="w-full h-64 object-cover rounded-lg mb-4"
+                  className="w-full h-64 object-cover rounded-lg mb-7"
                 />
               )}
               </Link>
@@ -78,18 +78,18 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                   {highlightPost.title}
                 </Link>
               </h3>
-              <p className="text-gray-600 mb-4">
+              <span className="text-gray-600 mb-4">
                 {highlightPost.category} 
                 {highlightPost.neighborhood ? ` | ${highlightPost.neighborhood}` : ''}
-              </p>
-              <p>{highlightPost.excerpt}</p>
+              </span>
+              <span>{highlightPost.excerpt}</span>
             </div>
           </div>
 
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
             <h2 className="text-2xl font-bold mb-2 font-serif">Trending</h2>
-            <ul className="space-y-4 border-4 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <ul className="space-y-4 border-4 list-none m-0 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
@@ -98,7 +98,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
                       {post.title}
                     </Link>
                   </div>
-                  <p className="text-gray-500 text-sm">{post.category} {post.neighborhood ? `| ${post.neighborhood}` : ""}</p>
+                  <span className="text-gray-500 text-sm">{post.category} {post.neighborhood ? `| ${post.neighborhood}` : ""}</span>
                 </li>
               ))}
             </ul>
@@ -106,10 +106,10 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
           {/* Instagram */}
           <div>
             {/* <h2 className="text-3xl font-bold mb-1 mt-4 font-serif">Instagram</h2> */}
-            <div className="border-4 border-double border-black rounded-lg p-4 mt-1 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-4 border-double border-black rounded-lg p-2 mt-1 hover:shadow-lg transition-shadow duration-300">
               <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
-                <h2 className="text-md mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h2>
+                <h2 className="text-sm mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h2>
               </a>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
         />
         <button type="submit" className="w-30 bg-black text-white ml-2 px-3 rounded-lg text-sm hover:bg-yellow-500 transition duration-300">
         {statusMessage ? (
-            <p className="text-xs text-white-600">{statusMessage}</p>
+            <span className="text-xs text-white-600">{statusMessage}</span>
           ) : (
             "Submit"
           )}
