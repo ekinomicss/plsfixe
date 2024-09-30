@@ -95,7 +95,7 @@ const Post = ({ postData, googleMapsData }) => {
           <div className="border-4 border-double border-black rounded-lg h-11 w-64 flex items-center justify-center bg-gray-100 hover:shadow-lg transition-shadow duration-300">
             <p className="text-sm font-serif text-yellow-600 text-center">
               <i>Last update: {formattedDate}</i>
-            </p>
+            </p>s
           </div>
         </div>
 
