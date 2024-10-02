@@ -14,15 +14,16 @@ menu2: "../images/kikis2.png"
 menu3: "../images/kikis3.png"
 ---
 
-## Welcome to the First Post
-  
-- This is an example of a Markdown post.
-- Item 2
-    - Item 3
-- Item 3
+## Kiki's: Surprisingly Authentic and Very Vibey 
 
+Kiki’s is one of my favorite Greek spots in NYC, tucked away in Chinatown but serving up the kind of warm, hearty dishes that transport you straight to the Mediterranean. The ambiance is unpretentious and cozy, with rustic decor that feels as welcoming as the staff who invite you to linger long after your plates are cleared. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat non augue in porta. Nullam consequat in purus non tempor. Aenean vitae ipsum neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et accumsan tellus, id dignissim nibh. Morbi ac tempus risus. 
+I always find myself indulging in the essentials: tender lamb chops, crispy saganaki with its perfect mix of cheese and honey, and grilled octopus that hits the mark every time. Whether it’s the vibrant Greek salad or the addictive dips with warm pita, Kiki’s feels like a reliable escape from the rush of the city, offering a laid-back atmosphere that’s as much about good company as it is about great food.
 
-Pellentesque ullamcorper lacus sollicitudin nisi auctor, vel egestas mi rutrum. Nam quis rhoncus lectus. Mauris tincidunt purus erat, vitae aliquet erat luctus sed. Suspendisse feugiat, metus id rhoncus fringilla, ipsum sapien dignissim arcu, id semper dui purus vitae justo. Sed euismod massa quis augue consequat fringilla. Aliquam nec pretium elit, at congue diam.
-
+## What to Order
+- Horiatiki Salad
+- Fried Calamari
+- Tzatziki
+- Branzino
+- Lamb Chops & French Fries
+- Niko's Cold Cheesecake

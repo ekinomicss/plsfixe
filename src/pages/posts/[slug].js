@@ -99,11 +99,12 @@ const Post = ({ postData, googleMapsData }) => {
           </div>
         </div>
 
+        {/* Blog Post Content */}
         <div className="flex flex-col mb-2">
           <img src="/images/divider1.png" className="w-80 mx-auto" />
         </div>
 
-        <div className="border-4 border-black border-double rounded-lg p-6 font-sans">
+        <div className="border-4 border-black border-double rounded-lg p-8 font-sans">
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           <MenuGallery images={menuImages} />
         </div>
