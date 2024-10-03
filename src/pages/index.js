@@ -118,7 +118,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
         </div>
 
         <div className="flex justify-between items-center gap-0 mt-4 mb-2">
-          <img src="/images/divider1_left.png" className="w-40" />
+          <img src="/images/divider1_left.png" className="w-20 lg: w-40 md:w-40" />
 
           {/* Newsletter Subscription Form */}
           <form className="w-full mb-4 mt-4" onSubmit={handleSubmit}>
@@ -141,7 +141,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
             </div>
           </form>
 
-          <img src="/images/divider1_left.png" className="w-40 transform scale-x-[-1]" />
+          <img src="/images/divider1_left.png" className="w-20 lg: w-40 md:w-40 transform scale-x-[-1]" />
         </div>
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
