@@ -48,6 +48,16 @@ export default function Header() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                      NEIGHBORHOODS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                      GUIDES
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/map" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
                       MAP
                     </Link>

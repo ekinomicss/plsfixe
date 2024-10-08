@@ -20,6 +20,10 @@ Kiki’s is one of my favorite Greek spots in NYC, tucked away in Chinatown but 
 
 I always find myself indulging in the essentials: tender lamb chops, crispy saganaki with its perfect mix of cheese and honey, and grilled octopus that hits the mark every time. Whether it’s the vibrant Greek salad or the addictive dips with warm pita, Kiki’s feels like a reliable escape from the rush of the city, offering a laid-back atmosphere that’s as much about good company as it is about great food.
 
+
+
+![Kiki's Dish|100](../images/kikis2.png)
+
 ## What to Order
 - Horiatiki Salad
 - Fried Calamari
