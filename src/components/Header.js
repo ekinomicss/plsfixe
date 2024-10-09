@@ -43,17 +43,17 @@ export default function Header() {
               <div className="absolute mt-0 bg-white border border-black rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
                 <ul className="py-2 list-none m-0">
                   <li>
-                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                    <Link href={{ pathname: '/posts', query: { category: 'ALL' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
                       POSTS
                     </Link>
                   </li>
                   <li>
-                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                    <Link href={{ pathname: '/posts', query: { category: 'ALL' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
                       NEIGHBORHOODS
                     </Link>
                   </li>
                   <li>
-                    <Link href="/posts" className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                    <Link href={{ pathname: '/posts', query: { category: 'GUIDES' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
                       GUIDES
                     </Link>
                   </li>

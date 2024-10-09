@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
+import { useRouter } from 'next/router'; // Import useRouter
 
 const CATEGORIES = {
   ALL: 'Posts',
   REVIEWS: 'Review',
-  LISTS: 'List',
+  GUIDES: 'Guide',
   BLOG_POSTS: 'Blog Post',
 };
 
@@ -30,10 +31,20 @@ export async function getStaticProps() {
 }
 
 const Posts = ({ allPostsData = [] }) => {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(CATEGORIES.ALL);
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(NEIGHBORHOODS.ALL);
   const [filteredPosts, setFilteredPosts] = useState(allPostsData);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    if (router.query.category && CATEGORIES[router.query.category.toUpperCase()]) {
+      setSelectedCategory(CATEGORIES[router.query.category.toUpperCase()]);
+    }
+    if (router.query.neighborhood && NEIGHBORHOODS[router.query.neighborhood.toUpperCase()]) {
+      setSelectedNeighborhood(NEIGHBORHOODS[router.query.neighborhood.toUpperCase()]);
+    }
+  }, [router.query]);
 
   useEffect(() => {
     setIsTransitioning(true); 
