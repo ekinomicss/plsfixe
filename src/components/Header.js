@@ -57,7 +57,7 @@ export default function Header() {
                       NEIGHBORHOODS
                     </button>
                     {neighborhoodOpen && (
-                      <div className="absolute w-[750px] right-full top-0 mt-0 text-center font-bold bg-white border border-black rounded-lg shadow-lg transition-all duration-300 ease-in-out p-4">
+                      <div className="absolute w-[1150px] right-full top-0 mt-0 font-bold bg-white border border-black rounded-xl shadow-lg transition-all duration-300 ease-in-out p-4">
                         <div className="grid grid-cols-5 gap-4">
                           {[
                             'Alphabet City', 'Chelsea', 'Chinatown', 'Columbus Circle', 'East Harlem', 'East Village', 
@@ -74,7 +74,7 @@ export default function Header() {
                             <li key={neighborhood} className="block">
                               <Link 
                                 href={{ pathname: '/posts', query: { formattedNeighborhood } }} 
-                                className="block px-4 py-2 text-black font-serif hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out"
+                                    className="block px-4 py-2 text-black font-serif hover:bg-yellow-600 hover:text-white rounded-xl ftransition-all duration-300 ease-in-out"
                               >
                                 {neighborhood}
                               </Link>
