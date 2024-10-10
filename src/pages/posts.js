@@ -13,10 +13,10 @@ const CATEGORIES = {
 
 const NEIGHBORHOODS = {
   ALL: 'Neighborhoods',
-  LES: 'Lower East Side',
+  LOWER_EAST_SIDE: 'Lower East Side',
   EAST_VILLAGE: 'East Village',
   MIDTOWN_EAST: 'Midtown East',
-  HELLS_KITCHEM: "Hell's Kitchen",
+  HELLS_KITCHEN: "Hell's Kitchen",
   NOHO: 'Noho',
 };
 

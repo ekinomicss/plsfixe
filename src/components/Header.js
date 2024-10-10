@@ -4,6 +4,7 @@ import { Search } from "../utils/Search";
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [neighborhoodOpen, setNeighborhoodOpen] = useState(false);
 
   return (
     <header className="fixed w-full bg-black border-b-8 border-double border-white py-4 z-50">
@@ -24,8 +25,8 @@ export default function Header() {
 
         {/* Navigation Links on the Right */}
         <nav className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-6 mt-4 md:mt-0 w-full md:w-auto">
-         <div className="relative"> <Search />
-         </div>
+          <div className="relative"> <Search />
+          </div>
 
           {/* Dropdown for DINE */}
           <div
@@ -47,10 +48,42 @@ export default function Header() {
                       POSTS
                     </Link>
                   </li>
-                  <li>
-                    <Link href={{ pathname: '/posts', query: { category: 'ALL' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                  <li
+                    onMouseEnter={() => setNeighborhoodOpen(true)}
+                    onMouseLeave={() => setNeighborhoodOpen(false)}
+                    className="relative"
+                  >
+                    <button className="block w-full text-left px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out focus:outline-none">
                       NEIGHBORHOODS
-                    </Link>
+                    </button>
+                    {neighborhoodOpen && (
+                      <div className="absolute w-[750px] right-full top-0 mt-0 text-center font-bold bg-white border border-black rounded-lg shadow-lg transition-all duration-300 ease-in-out p-4">
+                        <div className="grid grid-cols-5 gap-4">
+                          {[
+                            'Alphabet City', 'Chelsea', 'Chinatown', 'Columbus Circle', 'East Harlem', 'East Village', 
+                            'Financial District', 'Flatiron', 'Fort Greene', 
+                            'Gramercy', 'Greenpoint', 'Greenwich Village', 'Harlem', "Hell's Kitchen", 
+                            'Hudson Yards',  'Kips Bay', 'Koreatown', 'Lower East Side', 
+                            'Meatpacking District', 'Midtown', 'Midtown East',  'Morningside Heights', 
+                            'Murray Hill', 'NOHO', 'Nolita', 'Nomad', 'Park Slope','Soho', 
+                            'Tribeca', 'Union Square', 'Upper East Side', 'Upper West Side', 'West Harlem', 
+                            'West Village', 'Williamsburg'
+                          ].sort().map((neighborhood) => {
+                              const formattedNeighborhood = neighborhood.toUpperCase().replace(/\s+/g, '_');
+                              return(
+                            <li key={neighborhood} className="block">
+                              <Link 
+                                href={{ pathname: '/posts', query: { formattedNeighborhood } }} 
+                                className="block px-4 py-2 text-black font-serif hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out"
+                              >
+                                {neighborhood}
+                              </Link>
+                            </li>
+                              )
+                            })}
+                        </div>
+                      </div>
+                    )}
                   </li>
                   <li>
                     <Link href={{ pathname: '/posts', query: { category: 'GUIDES' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
