@@ -42,7 +42,7 @@ const Posts = ({ allPostsData = [] }) => {
       setSelectedCategory(CATEGORIES[router.query.category.toUpperCase()]);
     }
     if (router.query.neighborhood && NEIGHBORHOODS[router.query.neighborhood.toUpperCase()]) {
-      setSelectedNeighborhood(NEIGHBORHOODS[router.query.neighborhood.toUpperCase()]);
+      setSelectedNeighborhood(NEIGHBORHOODS[router.query.neighborhood.replace('+', /_/g).replace(' ', /_/g).toUpperCase()]);
     }
   }, [router.query]);
 

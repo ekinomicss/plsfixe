@@ -65,15 +65,14 @@ export default function Header() {
                             'Gramercy', 'Greenpoint', 'Greenwich Village', 'Harlem', "Hell's Kitchen", 
                             'Hudson Yards',  'Kips Bay', 'Koreatown', 'Lower East Side', 
                             'Meatpacking District', 'Midtown', 'Midtown East',  'Morningside Heights', 
-                            'Murray Hill', 'NOHO', 'Nolita', 'Nomad', 'Park Slope','Soho', 
+                            'Murray Hill', 'Noho', 'Nolita', 'Nomad', 'Park Slope','Soho', 
                             'Tribeca', 'Union Square', 'Upper East Side', 'Upper West Side', 'West Harlem', 
                             'West Village', 'Williamsburg'
                           ].sort().map((neighborhood) => {
-                              const formattedNeighborhood = neighborhood.toUpperCase().replace(/\s+/g, '_');
                               return(
                             <li key={neighborhood} className="block">
                               <Link 
-                                href={{ pathname: '/posts', query: { formattedNeighborhood } }} 
+                                    href={{ pathname: '/posts', query: { neighborhood: neighborhood.replace(/ /g, '_').toUpperCase() } }} 
                                     className="block px-4 py-2 text-black font-serif hover:bg-yellow-600 hover:text-white rounded-xl ftransition-all duration-300 ease-in-out"
                               >
                                 {neighborhood}
