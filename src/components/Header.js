@@ -58,7 +58,7 @@ export default function Header() {
                     </button>
                     {neighborhoodOpen && (
                       <div className="absolute w-[1150px] right-full top-0 mt-0 font-bold bg-white border border-black rounded-xl shadow-lg transition-all duration-300 ease-in-out p-4">
-                        <div className="grid grid-cols-5 gap-4">
+                        <div className="grid grid-cols-5 gap-3">
                           {[
                             'Alphabet City', 'Chelsea', 'Chinatown', 'Columbus Circle', 'East Harlem', 'East Village', 
                             'Financial District', 'Flatiron', 'Fort Greene', 
