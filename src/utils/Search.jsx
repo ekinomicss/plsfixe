@@ -39,7 +39,7 @@ const CustomHits = () => {
   }
 
   return (
-    <div className="absolute left-0 right-0 bg-white shadow-lg z-50 max-h-64 overflow-auto">
+    <div className="absolute bg-white shadow-lg z-50 max-h-64 overflow-auto">
       <Hits hitComponent={Hit} />
     </div>
   );

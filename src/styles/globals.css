@@ -116,10 +116,7 @@ footer {
   color: #555;
 }
 
-.ais-SearchBox {
-  /* margin-bottom: 1em; */
-}
-
+/* Search */ 
 .ais-InstantSearch {
   width: 250px;
   /* width: 100%; */
@@ -139,23 +136,23 @@ footer {
 .hit-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content at the top */
+  justify-content: flex-start; 
   width: 100%; 
-  padding: 0; /* Remove padding from hit items */
+  padding: 0; 
 }
 
 .hit-link p {
-  margin: 0; /* Remove margin from the paragraph */
-  padding: 0; /* Remove padding from the paragraph */
-  font-size: 14px; /* Adjust font size */
-  line-height: 1.2; /* Reduce the line-height */
+  margin: 0; 
+  padding: 0; 
+  font-size: 14px; 
+  line-height: 1.2; 
 }
 
 .hit-link {
   text-align: left;
   width: 100%;
-  padding: 0; /* Remove padding inside the link */
-  margin: 0; /* Remove margin from the link */
+  padding: 0; 
+  margin: 0; 
 }
 
 .ais-InstantSearch .ais-Hits-list {
