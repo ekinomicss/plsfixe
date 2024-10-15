@@ -85,7 +85,7 @@ export default function Header() {
                     )}
                   </li>
                   <li>
-                    <Link href={{ pathname: '/posts', query: { category: 'GUIDES' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
+                    <Link href={{ pathname: '/posts', query: { category: 'GUIDES', neighborhood: 'ALL' } }} className="block px-4 py-2 font-bold font-serif text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
                       GUIDES
                     </Link>
                   </li>
