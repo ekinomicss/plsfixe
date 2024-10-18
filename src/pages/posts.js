@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
-import { useRouter } from 'next/router'; // Import useRouter
+import { useRouter } from 'next/router';
 
 const CATEGORIES = {
   ALL: 'Posts',
@@ -30,35 +30,34 @@ export async function getStaticProps() {
   };
 }
 
-const Posts = ({ allPostsData = [] }) => {
+export default function Posts({ allPostsData = [] }) {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(CATEGORIES.ALL);
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(NEIGHBORHOODS.ALL);
   const [filteredPosts, setFilteredPosts] = useState(allPostsData);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isNeighborhoodMenuOpen, setIsNeighborhoodMenuOpen] = useState(false);
 
   useEffect(() => {
     if (router.query.category && CATEGORIES[router.query.category.toUpperCase()]) {
       setSelectedCategory(CATEGORIES[router.query.category.toUpperCase()]);
     }
-    if (router.query.neighborhood && NEIGHBORHOODS[router.query.neighborhood.toUpperCase()]) {
-      setSelectedNeighborhood(NEIGHBORHOODS[router.query.neighborhood.replace('+', /_/g).replace(' ', /_/g).toUpperCase()]);
+    if (router.query.neighborhood && NEIGHBORHOODS[router.query.neighborhood.replace(/\+/g, '_').replace(/ /g, '_').toUpperCase()]) {
+      setSelectedNeighborhood(NEIGHBORHOODS[router.query.neighborhood.replace(/\+/g, '_').replace(/ /g, '_').toUpperCase()]);
     }
   }, [router.query]);
 
   useEffect(() => {
-    setIsTransitioning(true); 
+    setIsTransitioning(true);
     setTimeout(() => {
       let newFilteredPosts = allPostsData;
 
-      // Filter by category if not 'All'
       if (selectedCategory !== CATEGORIES.ALL) {
         newFilteredPosts = newFilteredPosts.filter(
           (post) => post.category === selectedCategory
         );
       }
 
-      // Filter by neighborhood if not 'All'
       if (selectedNeighborhood !== NEIGHBORHOODS.ALL) {
         newFilteredPosts = newFilteredPosts.filter(
           (post) => post.neighborhood === selectedNeighborhood
@@ -67,24 +66,33 @@ const Posts = ({ allPostsData = [] }) => {
 
       setFilteredPosts(newFilteredPosts);
       setIsTransitioning(false);
-    }, 300); 
+    }, 300);
   }, [selectedCategory, selectedNeighborhood, allPostsData]);
+
+  const handleNeighborhoodSelect = (neighborhood) => {
+    setSelectedNeighborhood(neighborhood);
+    setIsNeighborhoodMenuOpen(false);
+  };
+
+  const resetNeighborhood = (e) => {
+    e.stopPropagation();
+    setSelectedNeighborhood(NEIGHBORHOODS.ALL);
+    setIsNeighborhoodMenuOpen(false);
+  };
 
   return (
     <Layout>
       <div className="container mx-auto py-12 font-sans px-6">
         <h1 className="text-3xl font-bold font-serif mb-6">Posts</h1>
-        
-        {/* Category Filter Buttons */}
+
         <div className="flex space-x-4 mb-2">
           {Object.values(CATEGORIES).map((category) => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-lg font-bold font-serif ${
-                selectedCategory === category
+              className={`px-4 py-2 rounded-lg font-bold font-serif ${selectedCategory === category
                   ? 'bg-yellow-600 text-white'
                   : 'bg-gray-100 text-black hover:bg-yellow-200'
-              }`}
+                }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category === CATEGORIES.ALL
@@ -94,35 +102,58 @@ const Posts = ({ allPostsData = [] }) => {
           ))}
         </div>
 
-        {/* Neighborhood Filter Buttons */}
-        <div className="flex space-x-4 mb-4">
-          {Object.values(NEIGHBORHOODS)
-           .sort((a, b) => {
-            // Special handling: keep "Neighborhoods" at the top
-            if (a === 'Neighborhoods') return -1;
-            if (b === 'Neighborhoods') return 1;
-            return a.localeCompare(b); // Sort other items alphabetically
-          })
-            .map((neighborhood) => (
-            <button
-              key={neighborhood}
-              className={`px-4 py-2 text-xs rounded-lg font-bold font-serif ${
-                selectedNeighborhood === neighborhood
-                  ? 'bg-yellow-600 text-white'
-                  : 'bg-gray-100 text-black hover:bg-yellow-200'
+        <div className="relative mb-4">
+          <button
+            className={`px-4 py-2 text-md rounded-lg font-bold font-serif flex items-center justify-between w-48 ${selectedNeighborhood !== NEIGHBORHOODS.ALL
+                ? 'bg-yellow-600 text-white'
+                : 'bg-gray-100 text-black hover:bg-yellow-200'
               }`}
-              onClick={() => setSelectedNeighborhood(neighborhood)}
-            >
-              {neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1)}
-            </button>
-          ))}
+            onClick={() => setIsNeighborhoodMenuOpen(!isNeighborhoodMenuOpen)}
+          >
+            <span className="truncate">
+              {selectedNeighborhood.charAt(0).toUpperCase() + selectedNeighborhood.slice(1)}
+            </span>
+            <div className="flex items-center">
+              {selectedNeighborhood !== NEIGHBORHOODS.ALL && (
+                <button
+                  className="mr-2 text-sm font-bold hover:text-yellow-600"
+                  onClick={resetNeighborhood}
+                >
+                  ✕
+                </button>
+              )}
+              <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </button>
+          {isNeighborhoodMenuOpen && (
+            <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-lg">
+              {Object.values(NEIGHBORHOODS)
+                .sort((a, b) => {
+                  if (a === 'Neighborhoods') return -1;
+                  if (b === 'Neighborhoods') return 1;
+                  return a.localeCompare(b);
+                })
+                .map((neighborhood) => (
+                  <button
+                    key={neighborhood}
+                    className={`block w-full text-left px-4 py-2 text-sm font-bold font-serif ${selectedNeighborhood === neighborhood
+                        ? 'bg-yellow-600 text-white'
+                        : 'text-black hover:bg-yellow-200'
+                      }`}
+                    onClick={() => handleNeighborhoodSelect(neighborhood)}
+                  >
+                    {neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1)}
+                  </button>
+                ))}
+            </div>
+          )}
         </div>
 
-        {/* Fade-in/out animation for the posts */}
         <div
-          className={`transition-opacity duration-300 ${
-            isTransitioning ? 'opacity-0' : 'opacity-100'
-          }`}
+          className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'
+            }`}
         >
           {filteredPosts.length > 0 ? (
             <Grid posts={filteredPosts} />
@@ -133,6 +164,4 @@ const Posts = ({ allPostsData = [] }) => {
       </div>
     </Layout>
   );
-};
-
-export default Posts;
+}
