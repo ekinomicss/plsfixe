@@ -97,9 +97,9 @@ export default function Header() {
                     onMouseLeave={() => setGuidesOpen(false)}
                     className="relative"
                   >
-                    <button className="block w-full text-left px-4 py-3 font-bold font-serif text-md text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out focus:outline-none">
+                    <Link href={{ pathname: '/posts', query: { category: 'GUIDES', neighborhood: 'ALL' } }} className="block w-full text-left px-4 py-3 font-bold font-serif text-md text-black hover:bg-yellow-600 hover:text-white transition-all duration-300 ease-in-out focus:outline-none">
                       GUIDES
-                    </button>
+                    </Link>
                     {guidesOpen && (
                       <div className="absolute right-full top-0 mr-2 bg-white border border-black rounded-lg shadow-lg transition-all duration-300 ease-in-out p-4" style={{ width: '300px', maxHeight: '80vh', overflowY: 'auto' }}>
                         <h3 className="text-black font-serif font-bold text-lg mb-3 border-b border-black pb-2">Recent Guides</h3>
