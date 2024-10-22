@@ -22,6 +22,9 @@ const PostCard = ({ post }) => {
         {post.category} 
         {post.neighborhood ? ` | ${post.neighborhood}` : ''}
         </span>
+      <span className="text-gray-600 flex text-xs">
+        {post.date}
+      </span>
     </div>
   );
 };
