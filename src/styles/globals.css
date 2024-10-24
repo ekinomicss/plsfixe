@@ -11,7 +11,7 @@
 body {
   /* @apply bg-gray-100 text-gray-900 antialiased; /* Tailwind utility classes */
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }

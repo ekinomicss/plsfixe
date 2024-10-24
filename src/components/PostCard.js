@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { getGoogleMapsData } from '../utils/googleMapsApi';
 
-const PostCard = ({ post }) => {
+
+const PostCard = ({ post, googleMapsData }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
@@ -65,8 +67,8 @@ const PostCard = ({ post }) => {
             transform: 'translate(10px, 10px)',
           }}
         >
-          <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-          <div className="flex justify-between mb-2">
+          <h3 className="text-lg font-semibold mb-1">{post.title}</h3>
+          <div className="flex justify-between mb-1">
             {[post.menu1, post.menu2, post.menu3].filter(Boolean).map((menu, index) => (
               <img
                 key={index}
@@ -77,7 +79,7 @@ const PostCard = ({ post }) => {
             ))}
           </div>
           <span className="text-sm text-gray-600">
-            {post.description || (post.body && post.body.substring(0, 100) + '...')}
+            {(post.content && post.content.substring(0, 100).replace(/#+/g, '') + '...')}
           </span>
         </div>
       )}

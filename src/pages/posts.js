@@ -158,7 +158,7 @@ export default function Posts({ allPostsData = [] }) {
           {filteredPosts.length > 0 ? (
             <Grid posts={filteredPosts} />
           ) : (
-            <p>No articles found matching the filters.</p>
+            <p>No posts found matching the filters.</p>
           )}
         </div>
       </div>
