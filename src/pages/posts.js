@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
+import Link from 'next/link';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
 import { useRouter } from 'next/router';
@@ -96,8 +97,11 @@ export default function Posts({ allPostsData = [] }) {
               {category === CATEGORIES.ALL
                 ? 'Posts'
                 : category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
+            </button>))}
+          <Link href="/map" className={`px-4 py-2 rounded-lg font-bold font-serif bg-gray-100 text-black hover:bg-yellow-200
+                  hover:'bg-yellow-600 text-white'`}>
+              Map
+            </Link>
         </div>
 
         <div className="relative mb-4">
