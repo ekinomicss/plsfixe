@@ -124,7 +124,6 @@ const Map = () => {
   return (
     <Layout>
       <div className="container mx-auto py-12">
-        <h1 className="text-3xl font-bold mb-6 font-serif">Restaurant Search Map</h1>
         <div className="w-full h-screen relative border border-black rounded-lg">
           <div className="absolute top-4 left-4 flex space-x-2 z-20">
             <button

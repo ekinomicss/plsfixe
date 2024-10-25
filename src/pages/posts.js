@@ -83,8 +83,6 @@ export default function Posts({ allPostsData = [] }) {
   return (
     <Layout>
       <div className="container mx-auto py-12 font-sans px-6">
-        <h1 className="text-3xl font-bold font-serif mb-6">Posts</h1>
-
         <div className="flex space-x-4 mb-2">
           {Object.values(CATEGORIES).map((category) => (
             <button
