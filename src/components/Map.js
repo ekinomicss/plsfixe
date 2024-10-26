@@ -1,10 +1,8 @@
 import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import Layout from '../components/Layout';
 
 const NYC_MAP_URL = '/nyc_open_data.geojson';
 
-// Example of specific locations to tag (latitude, longitude, and name)
 const locations = [
   { name: 'Central Park', coordinates: [-73.968285, 40.785091] },
   { name: 'Brooklyn Bridge', coordinates: [-73.996864, 40.706086] },
@@ -47,7 +45,6 @@ const Map = () => {
 
     svg.call(zoom);
 
-    // Fetch and render GeoJSON data (map details)
     d3.json(NYC_MAP_URL).then((geoData) => {
       svg
         .selectAll('path')
@@ -59,7 +56,6 @@ const Map = () => {
         .attr('stroke', '#003366')
         .attr('stroke-width', 1);
 
-      // Add markers for specific locations
       svg
         .selectAll('circle')
         .data(locations)
@@ -72,7 +68,6 @@ const Map = () => {
         .attr('stroke', 'black')
         .attr('stroke-width', 1);
 
-      // Add text labels for the locations
       svg
         .selectAll('text')
         .data(locations)
@@ -87,7 +82,6 @@ const Map = () => {
         .attr('stroke-width', 0.5);  
     });
 
-    // Resize map on window resize
     const handleResize = () => {
       const newWidth = window.innerWidth;
       const newHeight = window.innerHeight;
@@ -105,25 +99,20 @@ const Map = () => {
   const handleResetZoom = () => {
     const svg = d3.select(svgRef.current);
 
-    // Reset the zoom to the initial state (zoom level 1 and centered)
     svg.transition().duration(750).call(zoomRef.current.transform, d3.zoomIdentity);
   };
 
-  // Zoom in function
   const handleZoomIn = () => {
     const svg = d3.select(svgRef.current);
     svg.transition().duration(300).call(zoomRef.current.scaleBy, 1.2);  // Zoom in by 20%
   };
 
-  // Zoom out function
   const handleZoomOut = () => {
     const svg = d3.select(svgRef.current);
     svg.transition().duration(300).call(zoomRef.current.scaleBy, 0.8);  // Zoom out by 20%
   };
 
   return (
-    <Layout>
-      <div className="container mx-auto py-12">
         <div className="w-full h-screen relative border border-black rounded-lg">
           <div className="absolute top-4 left-4 flex space-x-2 z-20">
             <button
@@ -147,8 +136,6 @@ const Map = () => {
           </div>
           <svg ref={svgRef} width="100%" height="100%"></svg>
         </div>
-      </div>
-    </Layout>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import Map from '../components/Map';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
 import { useRouter } from 'next/router';
@@ -35,6 +36,7 @@ export default function Posts({ allPostsData = [] }) {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState(CATEGORIES.ALL);
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(NEIGHBORHOODS.ALL);
+  const [mapSelected, setMapSelected] = useState(false)
   const [filteredPosts, setFilteredPosts] = useState(allPostsData);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isNeighborhoodMenuOpen, setIsNeighborhoodMenuOpen] = useState(false);
@@ -92,16 +94,19 @@ export default function Posts({ allPostsData = [] }) {
                   ? 'bg-yellow-600 text-white'
                   : 'bg-gray-100 text-black hover:bg-yellow-200'
                 }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {setSelectedCategory(category);
+                             setMapSelected(false);
+                          }}
             >
               {category === CATEGORIES.ALL
                 ? 'Posts'
                 : category.charAt(0).toUpperCase() + category.slice(1)}
             </button>))}
-          <Link href="/map" className={`px-4 py-2 rounded-lg font-bold font-serif bg-gray-100 text-black hover:bg-yellow-200
-                  hover:'bg-yellow-600 text-white'`}>
+          <button className={`px-4 py-2 rounded-lg font-bold font-serif bg-gray-100 text-black hover:bg-yellow-200
+                  hover:'bg-yellow-600 text-white'`}
+                  onClick={() => setMapSelected(true)}>
               Map
-            </Link>
+            </button>
         </div>
 
         <div className="relative mb-4">
@@ -157,10 +162,14 @@ export default function Posts({ allPostsData = [] }) {
           className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'
             }`}
         >
-          {filteredPosts.length > 0 ? (
-            <Grid posts={filteredPosts} />
+          {mapSelected ? (
+            <Map /> 
           ) : (
-            <p>No posts found matching the filters.</p>
+            filteredPosts.length > 0 ? (
+              <Grid posts={filteredPosts} />
+            ) : (
+              <p>No posts found matching the filters.</p>
+            )
           )}
         </div>
       </div>
