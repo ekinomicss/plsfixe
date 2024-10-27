@@ -40,6 +40,7 @@ export default function Posts({ allPostsData = [] }) {
   const [filteredPosts, setFilteredPosts] = useState(allPostsData);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isNeighborhoodMenuOpen, setIsNeighborhoodMenuOpen] = useState(false);
+  const [isMapTransitioning, setIsMapTransitioning] = useState(false);
 
   useEffect(() => {
     if (router.query.category && CATEGORIES[router.query.category.toUpperCase()]) {
@@ -72,6 +73,13 @@ export default function Posts({ allPostsData = [] }) {
     }, 300);
   }, [selectedCategory, selectedNeighborhood, allPostsData]);
 
+  const handleMapClick = () => {
+    setIsMapTransitioning(true);
+    setMapSelected(true);
+    setTimeout(() => {
+      setIsMapTransitioning(false);
+    }, 300);
+  };
   const handleNeighborhoodSelect = (neighborhood) => {
     setSelectedNeighborhood(neighborhood);
     setIsNeighborhoodMenuOpen(false);
@@ -108,7 +116,8 @@ export default function Posts({ allPostsData = [] }) {
               ? 'bg-yellow-600 text-white'
               : 'bg-gray-100 text-black hover:bg-yellow-200'
                 }`}
-                  onClick={() => setMapSelected(true)}>
+            onClick={handleMapClick}
+                  >
               Map
             </button>
         </div>
@@ -162,19 +171,24 @@ export default function Posts({ allPostsData = [] }) {
           )}
         </div>
 
-        <div
-          className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-        >
-          {mapSelected ? (
-            <Map /> 
-          ) : (
-            filteredPosts.length > 0 ? (
+        <div className="relative">
+          <div
+            className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'
+              } ${!mapSelected ? 'block' : 'hidden'}`}
+          >
+            {filteredPosts.length > 0 ? (
               <Grid posts={filteredPosts} />
             ) : (
               <p>No posts found matching the filters.</p>
-            )
-          )}
+            )}
+          </div>
+
+          <div
+            className={`transition-opacity duration-300 ${isMapTransitioning ? 'opacity-0' : 'opacity-100'
+              } ${mapSelected ? 'block' : 'hidden'}`}
+          >
+            <Map />
+          </div>
         </div>
       </div>
     </Layout>
