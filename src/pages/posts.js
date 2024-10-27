@@ -90,7 +90,8 @@ export default function Posts({ allPostsData = [] }) {
           {Object.values(CATEGORIES).map((category) => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-lg font-bold font-serif ${selectedCategory === category
+              className={`px-4 py-2 rounded-lg font-bold font-serif 
+                ${selectedCategory === category && !mapSelected
                   ? 'bg-yellow-600 text-white'
                   : 'bg-gray-100 text-black hover:bg-yellow-200'
                 }`}
@@ -103,7 +104,10 @@ export default function Posts({ allPostsData = [] }) {
                 : category.charAt(0).toUpperCase() + category.slice(1)}
             </button>))}
           <button className={`px-4 py-2 rounded-lg font-bold font-serif bg-gray-100 text-black hover:bg-yellow-200
-                  hover:'bg-yellow-600 text-white'`}
+                  hover:'bg-yellow-600 text-white' ${mapSelected
+              ? 'bg-yellow-600 text-white'
+              : 'bg-gray-100 text-black hover:bg-yellow-200'
+                }`}
                   onClick={() => setMapSelected(true)}>
               Map
             </button>
