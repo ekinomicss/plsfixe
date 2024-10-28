@@ -52,12 +52,12 @@ export default function Header() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button
+            <Link href={{ pathname: '/posts', query: { category: 'ALL', neighborhood: 'ALL' } }} 
               className="text-white hover:text-yellow-600 hover:underline transition-all duration-300 ease-in-out font-bold font-serif text-md  bg-transparent focus:outline-none"
               style={{ backgroundColor: 'transparent', boxShadow: 'none' }}
             >
               DINE
-            </button>
+            </Link>
             {/* Dropdown for DINE */}
             {dropdownOpen && (
               <div className="absolute mt-0 w-48 bg-white border border-black rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
