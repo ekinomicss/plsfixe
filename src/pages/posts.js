@@ -148,7 +148,7 @@ export default function Posts({ allPostsData = [] }) {
             </div>
           </button>
           {isNeighborhoodMenuOpen && (
-            <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-lg">
+            <div className="absolute z-50 mt-1 w-48 rounded-md bg-white shadow-lg">
               {Object.values(NEIGHBORHOODS)
                 .sort((a, b) => {
                   if (a === 'Neighborhoods') return -1;
