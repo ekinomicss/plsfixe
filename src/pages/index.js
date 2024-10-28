@@ -66,11 +66,13 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
             <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
               <Link href={`/posts/${highlightPost.id}`}>
                 {highlightPost.thumbnail && (
-                  <img
-                    src={highlightPost.thumbnail}
-                    alt={highlightPost.title}
-                    className="w-full h-64 object-cover rounded-lg mb-7"
-                  />
+                  <div className="overflow-hidden">
+                    <img
+                      src={highlightPost.thumbnail}
+                      alt={highlightPost.title}
+                      className="w-full h-64 object-cover rounded-lg mb-7 hover:scale-105 transition duration-300 ease-in-out"
+                    />
+                  </div>
                 )}
               </Link>
               <h3 className="text-2xl font-semibold font-sans mb-2">
