@@ -21,7 +21,7 @@ export default function Footer() {
           </li>
           <li>
             <Link href="/posts" className="text-gray-300 hover:text-yellow-600">
-              Reviews
+              Posts
             </Link>
           </li>
           <li>
