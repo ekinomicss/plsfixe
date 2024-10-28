@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import Link from 'next/link';
 import Map from '../components/Map';
 import Grid from '../components/Grid';
 import { getSortedPostsData } from '../utils/markdownToHtml';
