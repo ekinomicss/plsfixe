@@ -62,7 +62,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold mb-2 font-serif">Latest Review</h2>
+            <h2 className="text-2xl font-bold mb-2 font-serif hover:text-yellow-600 transition ease-in-out">Latest Review</h2>
             <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
               <Link href={`/posts/${highlightPost.id}`}>
                 {highlightPost.thumbnail && (
@@ -88,7 +88,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
-            <h2 className="text-2xl font-bold mb-2 font-serif">Trending</h2>
+            <h2 className="text-2xl font-bold mb-2 font-serif hover:text-yellow-600 transition ease-in-out">Trending</h2>
             <ul className="space-y-4 border-4 list-none m-0 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
@@ -146,7 +146,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
         <div className="mt-1">
-          <h2 className="text-2xl font-bold mb-0 font-serif">À La Carte</h2>
+          <h2 className="text-2xl font-bold mb-0 font-serif hover:text-yellow-600 transition ease-in-out">À La Carte</h2>
           <Grid posts={otherPosts} />
         </div>
       </div>
