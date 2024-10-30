@@ -157,7 +157,7 @@ export default function Posts({ allPostsData = [] }) {
                 .map((neighborhood) => (
                   <button
                     key={neighborhood}
-                    className={`block w-full text-left px-4 py-2 text-sm font-bold font-serif ${selectedNeighborhood === neighborhood
+                    className={`block w-full text-left px-4 py-2 text-md font-bold font-serif ${selectedNeighborhood === neighborhood
                         ? 'bg-yellow-600 text-white'
                         : 'text-black hover:bg-yellow-200'
                       }`}
