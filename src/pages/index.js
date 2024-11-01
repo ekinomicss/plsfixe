@@ -62,8 +62,8 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
           {/* Highlighted Post (spanning two columns) */}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold mb-2 font-serif">Latest Review</h2>
-            <div className="border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+            <h2 className="text-2xl font-bold mb-2 font-serif italic double-underline [font-variant:small-caps]">Latest Review</h2>
+            <div className="rounded-lg p-4 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <Link href={`/posts/${highlightPost.id}`}>
                 {highlightPost.thumbnail && (
                   <div className="overflow-hidden">
@@ -90,8 +90,8 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
           {/* Trending Reviews (one column) */}
           <div className="lg:col-span-1 flex flex-col gap-0">
-            <h2 className="text-2xl font-bold mb-2 font-serif">Trending</h2>
-            <ul className="space-y-4 border-4 list-none m-0 border-double border-black rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <h2 className="text-2xl font-bold mb-2 font-serif italic [font-variant:small-caps]">Trending</h2>
+            <ul className="space-y-4 list-none m-0 shadow-xl rounded-lg hover:shadow-2xl transition-shadow duration-300">
               {trendingPosts.map((post, index) => (
                 <li key={post.id} className="border-b border-gray-300 pb-4 m-4 ">
                   <div className="flex items-center">
@@ -108,7 +108,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
             {/* Instagram */}
             <div>
               {/* <h2 className="text-3xl font-bold mb-1 mt-4 font-serif">Instagram</h2> */}
-              <div className="border-4 border-double border-black rounded-lg p-2 mt-1 hover:shadow-lg transition-shadow duration-300">
+              <div className="shadow-xl rounded-lg p-2 mt-1 hover:shadow-2xl transition-shadow duration-300">
                 <a href="https://www.instagram.com/plsfixenyc/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <img src="images/plsfixeig.png" className="h-24 w-24 mr-4" alt="PLS FIXE NYC Logo" />
                   <h3 className=" mt-3 font-sans">Follow us on instagram! <b>@plsfixenyc</b></h3>
@@ -128,7 +128,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
               <input
                 type="email"
                 placeholder="Subscribe to our newsletter..."
-                className="w-full border-2 placeholder:italic border-yellow-600 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600"
+                className="w-full border-2 placeholder:italic border-gray-200 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-600"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -148,7 +148,7 @@ const Home = ({ highlightPost, trendingPosts, otherPosts }) => {
 
         {/* Grid of Other Posts (below the highlight and trending section) */}
         <div className="mt-1">
-          <h2 className="text-2xl font-bold mb-0 font-serif">À La Carte</h2>
+          <h2 className="text-2xl font-bold mb-0 italic font-serif [font-variant:small-caps]">À La Carte</h2>
           <Grid posts={otherPosts} />
         </div>
       </div>

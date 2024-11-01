@@ -31,7 +31,7 @@ const PostCard = ({ post, googleMapsData }) => {
   return (
     <div
       ref={cardRef}
-      className="relative border-4 border-double border-black rounded-lg p-4 hover:shadow-lg transition-shadow duration-300"
+      className="relative shadow-xl rounded-lg p-4 hover:shadow-lg transition-shadow duration-300"
       
     >
       <Link href={`/posts/${post.slug}`}>

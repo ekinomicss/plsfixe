@@ -9,9 +9,6 @@ const Grid = ({ posts }) => {
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}
-        <Link href="/posts" className="block px-4 py-3 font-bold rounded-lg font-serif text-lg text-black text-bottom hover:text-yellow-600 hover:text-white transition-all duration-300 ease-in-out">
-          Browse all posts &gt;
-        </Link>
     </div>
     </div>
   );
