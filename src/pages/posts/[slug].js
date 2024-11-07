@@ -109,11 +109,20 @@ const Post = ({ postData, googleMapsData }) => {
           <img src="/images/divider1_bottom.png" className="w-64 sm:w-80 mx-auto" alt="Divider Bottom" />
         </div>
 
-        <a href="/posts">
-          <h4 className="text-lg font-bold underline font-serif mt-5 hover:text-yellow-600 duration-300 ease-in-out">
-            &lt; All Posts
-          </h4>
-        </a>
+        
+        <h4 className="text-lg font-bold font-serif mt-5 mb-0">
+          {postData.title}
+        </h4>
+        <h6 className="text-sm font-sans mt-0"> 
+          <a href="/posts" className="font-bold font-sans black underline hover:text-yellow-600 duration-300 ease-in-out">
+            Posts
+          </a>
+          <span> / </span>
+          <a href="/posts" className="font-bold font-sans black underline hover:text-yellow-600 duration-300 ease-in-out">
+            {postData.category && ` ${postData.category}`}
+          </a>
+          {postData.neighborhood && ` / ${postData.neighborhood}`}
+        </h6>
       </article>
     </Layout>
   );
